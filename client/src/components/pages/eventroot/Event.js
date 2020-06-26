@@ -2,6 +2,7 @@ import React from "react";
 import "../../css/mainwindow.css";
 
 
+
 function Event () {
   return (
     <div className="content-wrapper">
