@@ -3,6 +3,7 @@ import "../../css/mainwindow.css";
 import "../../css/card.css";
 
 
+
 function Event () {
   return (
     <div className="content-wrapper">
