@@ -1,6 +1,7 @@
 import React from "react";
 import "../../css/mainwindow.css";
 import "../../css/card.css";
+import "../../css/events.css";
 
 
 
@@ -126,7 +127,7 @@ function Event () {
             </div>
             <div class="card-body">
               <div class="event-properties">
-                <a href={"/event/" + event.eventId} class="event-button">Let's<b>do it!!</b></a>
+                <a href={"/activity/" + event.eventId} class="event-button">Let's<b>do it!!</b></a>
               </div>
             </div>
           </div>
