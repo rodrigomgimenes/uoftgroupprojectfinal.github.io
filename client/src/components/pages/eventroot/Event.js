@@ -5,6 +5,62 @@ import "../../css/card.css";
 
 
 function Event () {
+  var events = [
+    {
+      "eventId": 1,
+      "eventName": "Sports",
+      "eventDescription": "Some information about this event",
+      "eventRating": 4
+    },
+    {
+      "eventId": 2,
+      "eventName": "Fitness",
+      "eventDescription": "Some information about this event",
+      "eventRating": 3
+    },
+    {
+      "eventId": 3,
+      "eventName": "Parties",
+      "eventDescription": "Some information about this event",
+      "eventRating": 4
+    },
+    {
+      "eventId": 4,
+      "eventName": "Concerts",
+      "eventDescription": "Some information about this event",
+      "eventRating": 4
+    },
+    {
+      "eventId": 5,
+      "eventName": "Book club",
+      "eventDescription": "Some information about this event",
+      "eventRating": 4
+    },
+    {
+      "eventId": 6,
+      "eventName": "Demonstrations",
+      "eventDescription": "Some information about this event",
+      "eventRating": 4
+    },
+    {
+      "eventId": 7,
+      "eventName": "Welness",
+      "eventDescription": "Some information about this event",
+      "eventRating": 4
+    },
+    {
+      "eventId": 8,
+      "eventName": "Kids",
+      "eventDescription": "Some information about this event",
+      "eventRating": 4
+    },
+    {
+      "eventId": 9,
+      "eventName": "LGBTQ",
+      "eventDescription": "Some information about this event",
+      "eventRating": 4
+    }
+  ]
   return (
     <div className="content-wrapper">
       <section className="content-header">
@@ -22,7 +78,7 @@ function Event () {
 
       <section className="content">
       <div class="row">
-          <div class="card-event">
+          {/* <div class="card-event">
             <div class="card-head">
               <span class="event-title transparent">
                 <b class="fs dark">Sports</b> Event
@@ -54,7 +110,27 @@ function Event () {
                 <a href="true" class="event-button">Let's<b>do it!!</b></a>
               </div>
             </div>
+          </div> */}
+          {events.map(event => (
+          <div class="card-event">
+            <div class="card-head">
+              <span class="event-title transparent">
+                <b class="fs dark">{event.eventName}</b> Event
+                <span class="badge grey">New</span>
+              </span>
+              <span class="event-caption transparent">{event.eventDescription}</span>
+              <span class="event-rating orange-gradient">
+<i class="fas fa-star"></i>
+              </span>
+              <span class="back-text">{event.eventName}</span>
+            </div>
+            <div class="card-body">
+              <div class="event-properties">
+                <a href={"/event/" + event.eventId} class="event-button">Let's<b>do it!!</b></a>
+              </div>
+            </div>
           </div>
+          ))}
         </div>
 
       </section>
