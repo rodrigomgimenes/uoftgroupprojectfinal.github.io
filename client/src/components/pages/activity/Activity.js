@@ -40,7 +40,7 @@ function Activity () {
     },
     {
       "activityId": 9,
-      "activityName": "Snowboard"
+      "activityName": "Snowboarding"
     }
   ];
   return (
@@ -71,8 +71,9 @@ function Activity () {
             <div class="card-body">
               <div class="event-properties">
                 <a href={"/create/" + activity.activityId} class="event-button">Create</a>
-              </div>
-              <div class="event-properties">
+                <br></br>
+                <br></br>
+                <br></br>
                 <a href={"/join/" + activity.activityId} class="event-button">Join</a>
               </div>
             </div>

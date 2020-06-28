@@ -1,0 +1,30 @@
+body {
+    font-family: 'Roboto', sans-serif;
+  }
+  .fs {
+    font-size: 25px;
+  }
+  .dark {
+    color: #393e46;
+  }
+  .grey {
+    color: #464159;
+  }
+  .transparent {
+    color: rgb(255, 255, 255, 0.5);
+  }
+  .orange-gradient {
+    color: #fa782e;}
+.back-text {
+    display: inline-block;
+    font-size:50px;
+    font-weight: 900;
+    margin-left: -3px;
+    margin-top: 63px;
+    opacity: 0.1;
+  }
+ 
+      
+
+  
+  
