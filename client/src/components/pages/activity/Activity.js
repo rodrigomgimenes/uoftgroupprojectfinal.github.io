@@ -1,46 +1,63 @@
 import React from "react";
 import "../../css/mainwindow.css";
 import "../../css/card.css";
-
+import basketball from './images/basketball.jpeg';
+import biking from './images/biking.jpeg';
+import hockey from './images/hockey.jpeg';
+import mma from './images/mma.jpeg';
+import skating from './images/skating.jpeg';
+import snowboarding from './images/snowboarding.jpeg';
+import soccer from './images/soccer.jpeg';
+import tennis from './images/tennis.jpeg';
+import boxing from './images/boxing.jpeg'
 
 
 function Activity () {
   const activities = [
     {
       "activityId": 1,
-      "activityName": "Basketball"    
+      "activityName": "basketball",
+      "img": basketball
     },
     {
-      "activityId": 1,
-      "activityName": "Soccer" 
+      "activityId": 2,
+      "activityName": "Soccer",
+      "img": soccer
     },
     {
       "activityId": 3,
-      "activityName": "Skating"
+      "activityName": "Skating",
+      "img": skating
     },
     {
       "activityId": 4,
-      "activityName": "Hockey"
+      "activityName": "Hockey",
+      "img": hockey
     },
     {
       "activityId": 5,
-      "activityName": "Tennis"
+      "activityName": "Tennis",
+      "img": tennis
     },
     {
       "activityId": 6,
-      "activityName": "Biking"
+      "activityName": "Biking",
+      "img": biking
     },
     {
       "activityId": 7,
-      "activityName": "Boxing"
+      "activityName": "Boxing",
+      "img": boxing
     },
     {
       "activityId": 8,
-      "activityName": "MMA"
+      "activityName": "MMA",
+      "img": mma
     },
     {
       "activityId": 9,
-      "activityName": "Snowboarding"
+      "activityName": "Snowboarding",
+      "img": snowboarding
     }
   ];
   return (
@@ -48,7 +65,7 @@ function Activity () {
       <section className="content-header">
         <h1>
           Events
-          <small><i>"Start something new or join in.."</i></small>
+          <small><i>"Start something new or join in..."</i></small>
         </h1>
         <ol className="breadcrumb">
           <li>
@@ -61,20 +78,23 @@ function Activity () {
       <section className="content">
       <div class="row">
           {activities.map(activity => (
+            
           <div class="card-event">
+            
             <div class="card-head">
+            <img src={activity.img} />
               <span class="event-title transparent">
                 <b class="fs dark">{activity.activityName}</b>
               </span>
               <span class="back-text">{activity.activityName}</span>
             </div>
             <div class="card-body">
-              <div class="event-properties">
-                <a href={"/create/" + activity.activityId} class="event-button">Create</a>
-                <br></br>
-                <br></br>
-                <br></br>
-                <a href={"/join/" + activity.activityId} class="event-button">Join</a>
+              <div  class="event-properties">
+                <div style={styles.buttonContainer}>
+
+                <a style={styles.button} href={"/create/" + activity.activityId} class="event-button">Create</a>
+                <a style={styles.button} href={"/join/" + activity.activityId} class="event-button">Join</a>
+                </div>
               </div>
             </div>
           </div>
@@ -84,6 +104,18 @@ function Activity () {
       </section>
     </div>
   );
+}
+
+const styles ={
+  buttonContainer: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center"
+    },
+  button: {
+    position: "relative",
+    margin: 0
+  }
 }
 
 export default Activity;

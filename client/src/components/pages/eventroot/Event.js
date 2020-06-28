@@ -57,7 +57,7 @@ function Event() {
     {
       eventId: 9,
       eventName: "LGBTQ",
-      eventDescription: "Some information about this event",
+      eventDescription: "Love is love.",
       eventRating: 4,
     },
   ];
