@@ -22,7 +22,7 @@ function Home () {
         SHOW SOME APP FEATURES!!
         <br /><br /><br />
         <a href="/events">
-          <span><i class="fas fa-share"></i> Events</span>
+          <span><i className="fas fa-share"></i> Events</span>
         </a>
       </section>
     </div>
