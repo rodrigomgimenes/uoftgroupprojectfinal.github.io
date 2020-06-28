@@ -1,0 +1,30 @@
+[
+  {
+    "pages": [
+      {
+        "id":        1,
+        "href":      "/",
+        "headtitle": "Events",
+        "caption":   "Start something new or join in.."
+      }
+    ],
+    "events": [
+      {
+        "id":        1,
+        "headtitle": "Sports",
+        "badge":     "New",
+        "caption":   "Together is always better!!",
+        "example":   ["Soccer", "Basketball", "Hockey", "Snowboard", "and much more.."],
+        "category":  ["Soccer", "Basketball", "Hockey", "Baseball", "Tennis", "Snowboard", "Skateboard", "Ice Skating", "Bike"]
+      },
+      {
+        "id":        2,
+        "headtitle": "Festivals",
+        "badge":     "Soon",
+        "caption":   "Together is always better!!",
+        "example":   ["Canada Day", "Thanksgiving", "Christmas", "and much more.."],
+        "category":  ["Canada Day", "Thanksgiving", "Christmas"]
+      }
+    ]
+  }
+]
