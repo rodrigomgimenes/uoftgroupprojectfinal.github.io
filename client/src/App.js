@@ -9,6 +9,7 @@ import Home from "./components/pages/homepage/Home";
 import Event from "./components/pages/eventroot/Event";
 // import FormSport from "./components/FormSport/FormSport";
 import CreateEvent from "./components/pages/creat_event/CreateEvent";
+import Activity from "./components/pages/activity/Activity";
 
 
 
@@ -23,6 +24,7 @@ class App extends Component {
           {/* <Route exact path="/dummie" component={CreateEvent} /> */}
           <Route exact path="/events" component={Event} />
           <Route exact path="/createevent" component={CreateEvent} />
+          <Route exact path="/activity/:id" component={Activity} />
         </div>
         <Footer />
       </Router>
