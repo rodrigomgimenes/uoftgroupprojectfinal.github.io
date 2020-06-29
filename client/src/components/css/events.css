@@ -11,7 +11,8 @@ body {
     color: #464159;
   }
   .transparent {
-      margin-top: 6px;
+     
+      margin-top: 46px;
     color: rgb(255, 255, 255, 0.5);
   }
   .orange-gradient {
@@ -20,7 +21,7 @@ body {
     display: inline-block;
     font-size:50px;
     font-weight: 900;
-    margin-left: -3px;
+    margin-left: 5px;
     margin-top: 63px;
     opacity: 0.1;
   }
@@ -41,8 +42,6 @@ body {
       
 img {
     width: 100%;
-    height:71%;
+    height:100%;
     border-radius: 25px 25px 0px 0px;
 }
-
-  

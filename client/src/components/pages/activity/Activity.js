@@ -16,7 +16,7 @@ function Activity () {
   const activities = [
     {
       "activityId": 1,
-      "activityName": "basketball",
+      "activityName": "Basketball",
       "img": basketball
     },
     {
@@ -83,9 +83,6 @@ function Activity () {
             
             <div class="card-head">
             <img src={activity.img} />
-              <span class="event-title transparent">
-                <b class="fs dark">{activity.activityName}</b>
-              </span>
               <span class="back-text">{activity.activityName}</span>
             </div>
             <div class="card-body">
