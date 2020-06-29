@@ -9,7 +9,7 @@ function Sidebar() {
       <section className="sidebar">
         <div className="user-panel">
           <div className="pull-left image">
-            <img src="./assets/icons/anonymous.png" className="img-circle" alt="User" />
+            <img src="/assets/icons/anonymous.png" className="img-circle" alt="User" />
           </div>
           <div className="pull-left info">
             <span>Anonymous</span>

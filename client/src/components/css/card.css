@@ -14,6 +14,7 @@ body {
   color: rgb(255, 255, 255, 0.5);
 }
 .orange-gradient {
+  
   color: #fa782e;
   /* Old browsers */
   background: -moz-linear-gradient(-45deg, #fa782e 8%, #c82930 83%);
@@ -53,14 +54,6 @@ body {
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#fa782e', endColorstr='#c82930', GradientType=1);
   /* IE6-9 fallback on horizontal gradient */
   border-radius: 25px 25px 0 0;
-}
-.back-text {
-  display: inline-block;
-  font-size: 71px;
-  font-weight: 900;
-  margin-left: -3px;
-  margin-top: 63px;
-  opacity: 0.1;
 }
 .card-body {
   height: 128px;
