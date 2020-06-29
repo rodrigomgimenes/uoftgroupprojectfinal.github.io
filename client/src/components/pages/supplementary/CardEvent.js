@@ -32,7 +32,8 @@ function CardEvent(props) {
             </ul>
           </span>
 
-          <a href="true" class="event-button">Let's<b>do it!!</b></a>
+          <a href="./activity/activity.js
+          " class="event-button">Let's<b>do it!!</b></a>
         </div>
       </div>
     </div>
