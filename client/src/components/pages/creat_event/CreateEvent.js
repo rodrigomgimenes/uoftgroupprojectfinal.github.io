@@ -1,22 +1,50 @@
 import React from "react";
 import "./style.css";
 
-// import CreateEvent from "../creat_event";
-
 const CreateEvent = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("submit button");
+    const myNotification = window.createNotification({
+      // options here
+    });
+    // let list = document.getElementById("toast");
+    // list.classList.add("show");
+    // list.innerHTML =
+    //   '<i class="far fa-heart wish"></i> Event created successfully';
+    // setTimeout(function () {
+    //   list.classList.remove("show");
+    // }, 3000);
+  };
+
+  // function createEventSuccessfully() {
+  //   let list = document.getElementById("toast");
+  //   list.classList.add("show");
+  //   // list.add("show");
+  //   list.innerHTML = '<i class="far fa-heart wish"></i> Event created successfully';
+  //   setTimeout(function(){
+  //     list.classList.remove("show");
+  //     // list.remove("show");
+  //   },3000);
+  // }
+
   return (
     <div className="content-wrapper">
-      <div className="form-container ">
-        <form action="">
-          <h1>To.gather makes it possible!</h1>
+      <div className="form-container">
+        <div id="toast"></div>
+        <form action="" className="form" onSubmit={handleSubmit}>
+          <h1 className="title">To.gather makes it possible!</h1>
+          {/* <button className="ALERT row">ALERT</button> */}
           <div className="row container">
             <div className="form small-12 medium-3 large-3 column">
               <div className="form-group">
-                <label for="event-title">Event title</label>
+                <label for="event-title" id="form-event-title">
+                  Event title
+                </label>
                 <input
                   type="text"
                   className="form-control"
-                  id="form-event-title"
+                  id="evenTtitle"
                   aria-describedby="emailHelp"
                   placeholder="Make sure it's a good name"
                 />
@@ -24,7 +52,7 @@ const CreateEvent = () => {
 
               <div className="form-group">
                 <label for="exampleFormControlSelect1">Participants</label>
-                <select className="form-control" id="form-participants-number">
+                <select className="form-control" id="form-participants">
                   <option value>1</option>
                   <option value>2</option>
                   <option value>3</option>
@@ -101,23 +129,30 @@ const CreateEvent = () => {
                 </select>
               </div>
 
-              <div className="form-group">
-                <label for="formGroupExampleInput">Location</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="form-location"
-                  placeholder="Example input"
-                />
-              </div>
-              <button type="button" className="btn btn-lg btn-success" >
+              <label for="exampleFormControlSelect1">Location</label>
+              <br />
+              <button id="map-btn" type="button" class="btn btn-info btn-lg">
+                Go to map
+              </button>
+              <br />
+              <br />
+        
+              <button
+                id="create-event-btn"
+                type="submit"
+                className="btn btn-lg btn-success"
+                onClick=""
+              >
                 Create event
               </button>
-              <button type="button" className="btn btn-danger btn-lg" >
+              <button
+                id="decline-btn"
+                type="cancel"
+                className="btn btn-danger btn-lg"
+                onClick=""
+              >
                 Decline
               </button>
-              {/* <button className="btn btn-success"  type="submit">Create</button>
-              <button type="button" className="btn btn-danger">Decline</button> */}
             </div>
 
             <div
@@ -127,8 +162,8 @@ const CreateEvent = () => {
             >
               <label for="exampleFormControlTextarea1">Additional notes</label>
               <textarea
-                className="form-control"
                 id="exampleFormControlTextarea1"
+                className="form-control textarea"
                 rows="3"
               ></textarea>
             </div>

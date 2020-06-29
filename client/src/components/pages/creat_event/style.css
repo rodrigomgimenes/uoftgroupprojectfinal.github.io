@@ -1,61 +1,127 @@
 .zero {
-    margin: 0px;
-    padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
-.content-wrapper {
-    -webkit-transition: -webkit-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
-    -moz-transition: -moz-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
-    -o-transition: -o-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
-    transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
-    margin-left: 230px;
-    /* z-index: 820; */
-  }
+.title {
+  margin-left: 10px;
+}
+
 .form-container {
-    padding: 20px;
-    margin: 20px 200px 20px 200px;
-    
-    /* padding-bottom: 10px; */
+ /* background-color: cadetblue; */
+ margin-left: 40px;
 }
-
-.form {
-      /* margin-left: 20px; */
-      /* background-color: yellow; */
-      border: thick black;
-  }
-
 
 .input {
-    margin: 10px;
+  margin: 10px;
 }
 
 .notes {
-    margin:10px;
-    height: 100%;
+  margin: 10px;
+  height: 100%;
 }
 
+.ALERT {
+  float: right;
+  height: 30px;
+  width: 60px;
+  visibility: hidden;
+  visibility: visible;
+}
 
 /* columns */
 .column {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+/* .row:after {
+  content: "";
+  display: table;
+  clear: both;
+} */
+
+.btnAjust {
+  margin-right: auto;
+}
+
+.textarea {
+  /* width: 400px; */
+  height: 300px;
+  width: 250px;
+  
+}
+
+
+.wish {
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+  margin-left: -24px;
+  margin-top: 0px;
+  margin-right: 3px;
+  background-color: #fff;
+  color: #5c7cfa;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  text-align: center;
+  -ms-display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wish {
+  color: #c50707;
+}
+#toast {
+  padding: 10px;
+  padding-left: 5px;
+  position: fixed;
+  width: 230px;
+  height: 50px;
+  top: 200;
+  left: 80%;
+  transform: translate(-50%);
+  background-color: #eff2ff;
+  color: #76777e;
+  padding: 1px;
+  border-radius: 8px;
+  text-align: center;
+  z-index: 1;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  visibility: visible;
+  opacity: 0;
+  /* -ms-display: flex;
+    display: flex; */
+  align-items: center;
+  /* justify-content: center; */
+  font-size: 18px;
+  position: relative;
+  z-index: 1;
+}
+#toast.show,
+#toast-cart.show {
+  visibility: visible;
+  animation: fadeInOut 3s;
+}
+
+@media (max-width: 770px) {
+  .form-container {
+    margin: 0px;
+    /* background-color: blue; */
+  }
+  .textarea {
+    /* width: 400px; */
+    height: 210px;
+    width: 250px;
   }
 
-  /* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+  .btn btn-success{
+    width: 10px;
+    height: 10px;
   }
 
-  .btnAjust {
-   margin-right: auto;
-  }
-
-  @media (min-width: 770px) {
-    .form-container {
-        margin: 0px;
-    }
-  }
+} 
