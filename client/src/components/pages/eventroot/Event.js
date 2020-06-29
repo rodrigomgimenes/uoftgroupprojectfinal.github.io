@@ -1,66 +1,21 @@
-import React from "react";
+// import React from "react";
+import React, { Component } from "react";
+import CardEvent from "../supplementary/CardEvent";
+import togatherList from "../supplementary/togather.json";
+// CSS
 import "../../css/mainwindow.css";
 import "../../css/card.css";
 import "../../css/events.css";
 
-function Event() {
-  var events = [
-    {
-      eventId: 1,
-      eventName: "Sports",
-      eventDescription:
-        "Create or join a team. Either way, it's always fun to.gather!",
-      eventRating: 4,
-    },
-    {
-      eventId: 2,
-      eventName: "Fitness",
-      eventDescription: "Some information about this event",
-      eventRating: 3,
-    },
-    {
-      eventId: 3,
-      eventName: "Parties",
-      eventDescription: "Attend the latest parties across the GTA.",
-      eventRating: 4,
-    },
-    {
-      eventId: 4,
-      eventName: "Concerts",
-      eventDescription: "Get the latest 411 on upcoming concerts.",
-      eventRating: 4,
-    },
-    {
-      eventId: 5,
-      eventName: "Book club",
-      eventDescription: "It's not gossip if the characters are fictional.Connect with fellow book lovers.",
-      eventRating: 4,
-    },
-    {
-      eventId: 6,
-      eventName: "Demonstrations",
-      eventDescription: "To.gather, we can make a difference!",
-      eventRating: 4,
-    },
-    {
-      eventId: 7,
-      eventName: "Welness",
-      eventDescription: "The greatest wealth is health and we got you!",
-      eventRating: 4,
-    },
-    {
-      eventId: 8,
-      eventName: "Kids",
-      eventDescription: "Some information about this event",
-      eventRating: 4,
-    },
-    {
-      eventId: 9,
-      eventName: "LGBTQ",
-      eventDescription: "Love is love.",
-      eventRating: 4,
-    },
-  ];
+
+
+// function Event () {
+class Event extends Component {
+  state = {
+    togatherList
+  };
+
+  render() {
   return (
     <div className="content-wrapper">
       <section className="content-header">
@@ -82,39 +37,25 @@ function Event() {
       </section>
 
       <section className="content">
-        <div class="row">
-          {events.map((event) => (
-            <div class="card-event">
-              <div class="card-head">
-                <span class="event-title transparent">
-                  <b class="fs dark">{event.eventName}</b> Event
-                  <span class="badge grey">New</span>
-                </span>
-                <span class="event-caption transparent">
-                  {event.eventDescription}
-                </span>
-                <span class="event-rating orange-gradient">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </span>
-              </div>
-              <div class="card-body">
-                <div class="event-properties">
-                  <a href={"/activity/" + event.eventId} class="event-button">
-                    Let's<b>do it!!</b>
-                  </a>
-                </div>
-              </div>
-              
-            </div>
-          ))}
-        </div>
+      <div class="row">
+        {/* ROUTE to every card event */}
+        {this.state.togatherList.map(togather => (
+          togather.events.map(events => (
+            <CardEvent 
+              id={events.id} 
+              headtitle={events.headtitle} 
+              badge={events.badge} 
+              caption={events.caption} 
+              example={events.example} 
+            />
+          ))
+        ))}
+      </div>
+
       </section>
     </div>
   );
+  }
 }
 
 export default Event;

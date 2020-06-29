@@ -7,8 +7,8 @@ body {
 .dark {
   color: #393e46;
 }
-.grey {
-  color: #464159;
+.bright {
+  color: #f4f6ff;
 }
 .transparent {
   color: rgb(255, 255, 255, 0.5);
@@ -37,7 +37,7 @@ body {
   position: inherit;
   width: 288px;
   height: 382px;
-  margin: 20px 35px;
+  margin: 20px 10px 20px 35px;
   border-radius: 25px;
 }
 .card-head {
@@ -77,11 +77,13 @@ body {
   position: relative;
   font-size: 10px;
   font-weight: 300;
-  background: #11e95b;
-  padding: 2px 5px;
-  border-radius: 4px;
-  top: -2px;
-  margin-left: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 5px;
+  border-radius: 0px;
+  /* top: -10px; */
+  /* margin-left: 20px; */
+  float: right;
 }
 .event-caption {
   display: block;
