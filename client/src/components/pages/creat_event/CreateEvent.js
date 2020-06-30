@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+import "./style_createEvent.css";
 
 const CreateEvent = () => {
   const handleSubmit = (e) => {
@@ -30,24 +30,25 @@ const CreateEvent = () => {
 
   return (
     <div className="content-wrapper">
-      <div className="form-container">
+      <div className="form-container1">
         <div id="toast"></div>
         <form action="" className="form" onSubmit={handleSubmit}>
-          <h1 className="title">To.gather makes it possible!</h1>
-          {/* <button className="ALERT row">ALERT</button> */}
           <div className="row container">
+          <h1 className="title">To.gather makes it possible!</h1>
             <div className="form small-12 medium-3 large-3 column">
               <div className="form-group">
                 <label for="event-title" id="form-event-title">
                   Event title
                 </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="evenTtitle"
-                  aria-describedby="emailHelp"
-                  placeholder="Make sure it's a good name"
-                />
+                  <div id="i-have-a-tooltip" data-description="Name your event">
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="evenTtitle"
+                      aria-describedby="emailHelp"
+                      // placeholder="Make sure it's a good name"
+                    />
+                  </div>
               </div>
 
               <div className="form-group">
@@ -161,11 +162,13 @@ const CreateEvent = () => {
               id="form-notes"
             >
               <label for="exampleFormControlTextarea1">Additional notes</label>
-              <textarea
-                id="exampleFormControlTextarea1"
-                className="form-control textarea"
-                rows="3"
-              ></textarea>
+              <div id="i-have-a-tooltip" data-description="Your rules!">
+                <textarea
+                  id="exampleFormControlTextarea1"
+                  className="form-control textarea"
+                  rows="3"
+                ></textarea>
+              </div>
             </div>
           </div>
         </form>
