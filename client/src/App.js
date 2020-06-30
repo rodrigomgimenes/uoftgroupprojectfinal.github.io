@@ -7,10 +7,8 @@ import Footer from "./components/pages/supplementary/Footer";
 // Routes
 import Home from "./components/pages/homepage/Home";
 import Event from "./components/pages/eventroot/Event";
-// import FormSport from "./components/FormSport/FormSport";
+import EventBranch from "./components/pages/eventbranch/EventBranch";
 import CreateEvent from "./components/pages/creat_event/CreateEvent";
-import Activity from "./components/pages/activity/Activity";
-
 
 
 class App extends Component {
@@ -21,10 +19,9 @@ class App extends Component {
         <Sidebar />
         <div>
           <Route exact path="/" component={Home} />
-          {/* <Route exact path="/dummie" component={CreateEvent} /> */}
           <Route exact path="/events" component={Event} />
+          <Route path="/events~category=:id" component={EventBranch} />
           <Route exact path="/createevent" component={CreateEvent} />
-          <Route exact path="/activity/:id" component={Activity} />
         </div>
         <Footer />
       </Router>
