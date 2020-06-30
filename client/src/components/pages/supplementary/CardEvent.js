@@ -4,36 +4,35 @@ function CardEvent(props) {
   const badge = props.badge;
 
   return (
-    <div class="card-event" id={props.id}>
-      <div class="card-head">
-        <span class="event-title transparent">
-          <b class="fs dark">{props.headtitle}</b> Event
+    <div className="card-event" id={props.id}>
+      <div className="card-head">
+        <span className="event-title transparent">
+          <b className="fs dark">{props.headtitle}</b> Event
         </span>
         {badge &&
           <span className={(badge.toLowerCase() === "new" ? "badge b-green" : "badge b-purple")}>{badge}</span>
         }
-        <span class="event-caption transparent">{props.caption}</span>
-        <span class="event-rating orange-gradient">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
+        <span className="event-caption transparent">{props.caption}</span>
+        <span className="event-rating orange-gradient">
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
         </span>
       </div>
-      <div class="card-body">
-        <div class="event-properties">
-          <span class="event-size">
+      <div className="card-body">
+        <div className="event-properties">
+          <span className="event-size">
             <h4>Choose your category :</h4>
-            <ul class="ul-size">
-            {props.example.map(element => (
-              <li>{element}</li>
+            <ul className="ul-size">
+            {props.example.map((element, index) => (
+              <li key={index}>{element}</li>
             ))}
             </ul>
           </span>
 
-          <a href="./activity/activity.js
-          " class="event-button">Let's<b>do it!!</b></a>
+          <a href={props.href} className="event-button">Let's<b>do it!!</b></a>
         </div>
       </div>
     </div>

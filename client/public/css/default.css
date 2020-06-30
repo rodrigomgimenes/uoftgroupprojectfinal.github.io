@@ -12,8 +12,8 @@ body {
 body {
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  overflow-x: scroll;
-  overflow-y: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 h1,
 h2,

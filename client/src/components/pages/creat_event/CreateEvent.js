@@ -6,7 +6,7 @@ import "./style.css";
 const CreateEvent = () => {
   return (
     <div className="content-wrapper">
-      <div className="form-container ">
+      <div className="form-container">
         <form action="">
           <h1>To.gather makes it possible!</h1>
           <div className="row container">
