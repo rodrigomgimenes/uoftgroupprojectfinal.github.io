@@ -26,6 +26,9 @@ class Event extends Component {
             <a href="/"><i className="fas fa-door-open"></i><span className="text-orange"> Main</span></a>
           </li>
           <li>Events</li>
+          <li>
+            <a href="/"><i className="fas fa-door-open"></i><span className="text-orange"> View All</span></a>
+          </li>
         </ol>
       </section>
 

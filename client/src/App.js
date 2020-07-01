@@ -9,6 +9,7 @@ import Home from "./components/pages/homepage/Home";
 import Event from "./components/pages/eventroot/Event";
 import EventBranch from "./components/pages/eventbranch/EventBranch";
 import CreateEvent from "./components/pages/creat_event/CreateEvent";
+import ViewAll from "./components/pages/viewall/ViewAll";
 
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
           <Route exact path="/events" component={Event} />
           <Route path="/events~category=:id" component={EventBranch} />
           <Route exact path="/createevent" component={CreateEvent} />
+          <Route exact path="/viewall" component={ViewAll} />
         </div>
         <Footer />
       </Router>

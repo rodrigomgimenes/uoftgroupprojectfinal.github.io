@@ -24,6 +24,10 @@ function Home () {
         <a href="/events">
           <span><i className="fas fa-share"></i> Events</span>
         </a>
+        <br /><br /><br />
+        <a href="/viewall">
+          <span><i className="fas fa-share"></i> View all</span>
+        </a>
       </section>
     </div>
   );

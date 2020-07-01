@@ -33,6 +33,9 @@ class EventBranch extends Component {
             <li>
             <a href="/events"><span className="text-orange"> Events</span></a>
             </li>
+            <li>
+              <a href="/viewall"><i className="fas fa-door-open"></i><span className="text-orange"> View All</span></a>
+            </li>
             <li>{eventObject[0][0].headtitle}</li>
           </ol>
         </section>
