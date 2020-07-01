@@ -1,3 +1,6 @@
+.m-l-sm {
+  margin-left: 0.75rem;
+}
 .text-black {
   color: #111 !important;
 }
@@ -184,7 +187,8 @@
 }
 .label {
   display: inline;
-  padding: .1em .6em .1em;
+  /* padding: .1em .6em .1em; */
+  padding: .3em .6em .3em;
   font-size: 75%;
   font-weight: 700;
   line-height: 1;
@@ -380,6 +384,9 @@
   min-height: 50px;
   border-radius: 0;
 }
+.menubar {
+  visibility: hidden;
+}
 .layout-top-nav .main-header .navbar {
   margin-left: 0;
 }
@@ -532,6 +539,9 @@
   .main-header .navbar {
     margin: 0;
   }
+  .menubar {
+    visibility: visible;
+  }
   .main-header .navbar-custom-menu {
     float: right;
   }
@@ -676,7 +686,9 @@
 }
 .sidebar-menu > li .label,
 .sidebar-menu > li .badge {
-  margin-right: 25px;
+  /* margin-right: 25px; */
+  position: absolute;
+  margin-left: -46px;
 }
 .sidebar-menu > li .badge {
   margin-top: 3px;
