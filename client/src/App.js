@@ -22,6 +22,7 @@ class App extends Component {
         <div>
           <Route exact path="/" component={Home} />
           <Route exact path="/events" component={Event} />
+          <Route path="/events~category=:id" component={EventBranch} />
           <Route exact path="/create-event" component={CreateEvent} />
           <Route exact path="/user-events" component={UserEvents} />
         </div>
