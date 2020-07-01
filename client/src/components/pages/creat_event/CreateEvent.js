@@ -2,12 +2,13 @@ import React from "react";
 import "./style_createEvent.css";
 
 const CreateEvent = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("submit button");
-    const myNotification = window.createNotification({
-      // options here
-    });
+  =========== DON'T WORRY ABOUT THIS, I AM WORKING ON IT! =============
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log("submit button");
+  //   const myNotification = window.createNotification({
+  //     // options here
+  //   });
     // let list = document.getElementById("toast");
     // list.classList.add("show");
     // list.innerHTML =
