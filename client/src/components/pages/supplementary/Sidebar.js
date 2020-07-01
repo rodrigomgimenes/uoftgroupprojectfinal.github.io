@@ -16,7 +16,7 @@ function Sidebar() {
             <p><i className="fas fa-check-double text-lime"></i> Online</p>
           </div>
         </div>
-        <form action="#" method="get" className="sidebar-form">
+        {/* <form action="#" method="get" className="sidebar-form">
           <div className="input-group">
             <input type="text" name="q" className="form-control" placeholder="Search..." />
             <span>
@@ -25,7 +25,7 @@ function Sidebar() {
               </button>
             </span>
           </div>
-        </form>
+        </form> */}
         <ul className="sidebar-menu" data-widget="tree">
           <li className="header">MAIN</li>
           <li className="treeview">
@@ -45,11 +45,10 @@ function Sidebar() {
                   </span>
                 </a>
                 <ul className="treeview-menu">
-                  <li><a href="#">- Baseball</a></li>
-                  <li><a href="#">- Basketball</a></li>
-                  <li><a href="#">- Football</a></li>
-                  <li><a href="#">- Hockey</a></li>
                   <li><a href="#">- Soccer</a></li>
+                  <li><a href="#">- Basketball</a></li>
+                  <li><a href="#">- Volleyball</a></li>
+                  <li><a href="#">- Tennis</a></li>
                 </ul>
               </li>
               <li>

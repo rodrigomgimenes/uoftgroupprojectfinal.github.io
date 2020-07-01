@@ -380,6 +380,9 @@
   min-height: 50px;
   border-radius: 0;
 }
+.menubar {
+  visibility: hidden;
+}
 .layout-top-nav .main-header .navbar {
   margin-left: 0;
 }
@@ -531,6 +534,9 @@
   }
   .main-header .navbar {
     margin: 0;
+  }
+  .menubar {
+    visibility: visible;
   }
   .main-header .navbar-custom-menu {
     float: right;

@@ -41,18 +41,22 @@
         "headtitle": "Festivals",
         "badge":     "Soon",
         "caption":   "Together is always better!!",
-        "example":   ["Canada Day", "Thanksgiving", "Christmas", "and much more.."],
+        "example":   ["Good Friday", "Canada Day", "Labour Day", "and much more.."],
         "category":  [
+          {
+            "title": "Good Friday", 
+            "src_img": "http://archive-media-2.nyafuu.org/bant/image/1493/96/1493966463499.jpg"
+          },
           {
             "title": "Canada Day", 
             "src_img": "http://archive-media-2.nyafuu.org/bant/image/1493/96/1493966463499.jpg"
           },
           {
-            "title": "Thanksgivin", 
+            "title": "Labour Day", 
             "src_img": "http://archive-media-2.nyafuu.org/bant/image/1493/96/1493966463499.jpg"
           },
           {
-            "title": "Christmas", 
+            "title": "Christmas Parade", 
             "src_img": "http://archive-media-2.nyafuu.org/bant/image/1493/96/1493966463499.jpg"
           }
         ]
