@@ -1,0 +1,66 @@
+[
+  {
+    "pages": [
+      {
+        "id":        1,
+        "href":      "/",
+        "headtitle": "Events",
+        "caption":   "Start something new or join in.."
+      }
+    ],
+    "events": [
+      {
+        "id":        1,
+        "href":      "/events~category=Sports@101",
+        "headtitle": "Sports",
+        "badge":     "New",
+        "caption":   "Together is always better!!", 
+        "example":   ["Soccer", "Basketball", "Volleyball", "Tennis", "and much more.."],
+        "category":  [
+          {
+            "title": "Soccer",
+            "src_img": "./assets/images/sports/soccer.jpeg"
+          },
+          {
+            "title": "Basketball", 
+            "src_img": "./assets/images/sports/basketball.jpeg"
+          },
+          {
+            "title": "Volleyball", 
+            "src_img": "./assets/images/sports/volleyball.jpeg"
+          },
+          {
+            "title": "Tennis", 
+            "src_img": "./assets/images/sports/tennis.jpeg"
+          }
+        ]
+      },
+      {
+        "id":        2,
+        "href":      "/events~category=Festivals@102",
+        "headtitle": "Festivals",
+        "badge":     "Soon",
+        "caption":   "Together is always better!!",
+        "example":   ["Good Friday", "Canada Day", "Labour Day", "and much more.."],
+        "category":  [
+          {
+            "title": "Good Friday", 
+            "src_img": "http://archive-media-2.nyafuu.org/bant/image/1493/96/1493966463499.jpg"
+          },
+          {
+            "title": "Canada Day", 
+            "src_img": "http://archive-media-2.nyafuu.org/bant/image/1493/96/1493966463499.jpg"
+          },
+          {
+            "title": "Labour Day", 
+            "src_img": "http://archive-media-2.nyafuu.org/bant/image/1493/96/1493966463499.jpg"
+          },
+          {
+            "title": "Christmas Parade", 
+            "src_img": "http://archive-media-2.nyafuu.org/bant/image/1493/96/1493966463499.jpg"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -7,6 +7,8 @@ import Footer from "./components/pages/supplementary/Footer";
 // Routes
 import Home from "./components/pages/homepage/Home";
 import Event from "./components/pages/eventroot/Event";
+import EventBranch from "./components/pages/eventbranch/EventBranch";
+import CreateEvent from "./components/pages/creat_event/CreateEvent";
 
 
 class App extends Component {
@@ -18,6 +20,8 @@ class App extends Component {
         <div>
           <Route exact path="/" component={Home} />
           <Route exact path="/events" component={Event} />
+          <Route path="/events~category=:id" component={EventBranch} />
+          <Route exact path="/createevent" component={CreateEvent} />
         </div>
         <Footer />
       </Router>

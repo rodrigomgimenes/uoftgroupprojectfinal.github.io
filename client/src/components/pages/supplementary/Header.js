@@ -11,7 +11,7 @@ function Header() {
       </Link>
 
       <nav className="navbar">
-        <i className="fas fa-bars" data-toggle="push-menu" role="button"></i>
+        <i className="fas fa-bars menubar" data-toggle="push-menu" role="button"></i>
       </nav>
     </header>
   );
