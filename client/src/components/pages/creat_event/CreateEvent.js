@@ -1,5 +1,9 @@
 import React from "react";
+import Maps from "../supplementary/Maps";
+
 import "./style.css";
+import "../../css/index.css";
+
 
 // import CreateEvent from "../creat_event";
 
@@ -131,11 +135,20 @@ const CreateEvent = () => {
                 id="exampleFormControlTextarea1"
                 rows="3"
               ></textarea>
+
+              <section className="content">
+                <Maps/>
+              </section>
             </div>
           </div>
         </form>
+
+       
       </div>
+
+      
     </div>
+ 
   );
 };
 export default CreateEvent;
