@@ -28,7 +28,7 @@ class EventBranch extends Component {
           </h1>
           <ol className="breadcrumb">
             <li>
-              <a href="/"><i className="fas fa-door-open"></i><span className="text-orange"> Main</span></a>
+              <a href="/home"><i className="fas fa-door-open"></i><span className="text-orange"> Main</span></a>
             </li>
             <li>
             <a href="/events"><span className="text-orange"> Events</span></a>
