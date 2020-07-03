@@ -1,0 +1,82 @@
+.createEvent-title {
+  padding-left: 50px;
+}
+
+.createEvent-container {
+  padding-top: 5%;
+  padding-left: 5%;
+}
+
+.createEvent-form-container {
+    padding: 20px;
+    margin: 20px 200px 20px 200px;
+    
+    /* padding-bottom: 10px; */
+}
+.createEvent-right-row {
+  margin-left: 40px;
+}
+
+.calendar-container {
+  width: auto;
+}
+
+.createEvent-input {
+    margin: 10px;
+}
+
+.createEvent-notes {
+    margin:10px;
+    height: 100%;
+    margin-left: 20px;
+}
+
+
+/* columns */
+.createEvent-column {
+    float: left;
+    width: 50%;
+    margin-left: 20px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+
+/* .createEvent-textArea {
+  height: 924px;
+  width: 100%;
+} */
+
+  /* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .createEvent-btnAjust {
+   margin-right: auto;
+  }
+
+  .createEvent-time-form {
+    margin-top: 10px;
+  }
+
+  
+
+  @media (max-width: 770px) {
+    .createEvent-container {
+        padding: 5%;
+    }
+    .createEvent-input {
+      margin: 100px;
+  }
+
+  .createEvent-right-row {
+    margin-left: 0px;
+  }
+  /* .createEvent-form-container { */
+    /* padding: 20px; */
+    /* margin: 20px 200px 20px 200px; */
+    
+    /* padding-bottom: 10px; */
+/* } */
+  }
