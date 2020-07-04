@@ -35,7 +35,8 @@ const CreateEvent = () => {
   //   },3000);
   // }
 
-  const headTitle = (window.location.href).substring((window.location.href).indexOf("=") + 1, (window.location.href).length);
+  const headTitle  = (window.location.href).substring((window.location.href).indexOf("=") + 1, (window.location.href).length);
+  const hrefCancel = `/events~category=${(headTitle).substring(0, (headTitle).indexOf(":"))}`;
 
   return (
     <div className="content-wrapper">
@@ -209,19 +210,20 @@ const CreateEvent = () => {
               <button
                 id="create-event-btn"
                 type="submit"
-                className="btn btn-lg btn-success createEvent-m-ml"
+                className="btn btn-md btn-success createEvent-m-ml"
                 onClick=""
               >
                 Create event
               </button>
-              <button
+              {/* <button
                 id="decline-btn"
                 type="cancel"
                 className="btn btn-danger btn-lg createEvent-m-ml createEvent-d-inline"
                 onClick=""
               >
                 Cancel
-              </button>
+              </button> */}
+              <a href={hrefCancel} className="btn-custom btn-danger btn-md createEvent-m-ml createEvent-d-inline">Cancel</a>
             </div>
 
             <div
