@@ -203,17 +203,13 @@ const CreateEvent = () => {
               </div>
 
               <label for="exampleFormControlSelect1">Location</label>
-              <br />
-              <button id="map-btn" type="button" class="btn btn-info btn-lg">
+              <button id="map-btn" type="button" class="btn btn-info btn-lg createEvent-m-ml createEvent-d-block">
                 Go to map
               </button>
-              <br />
-              <br />
-
               <button
                 id="create-event-btn"
                 type="submit"
-                className="btn btn-lg btn-success"
+                className="btn btn-lg btn-success createEvent-m-ml"
                 onClick=""
               >
                 Create event
@@ -221,10 +217,10 @@ const CreateEvent = () => {
               <button
                 id="decline-btn"
                 type="cancel"
-                className="btn btn-danger btn-lg"
+                className="btn btn-danger btn-lg createEvent-m-ml createEvent-d-inline"
                 onClick=""
               >
-                Decline
+                Cancel
               </button>
             </div>
 
