@@ -35,12 +35,20 @@ const CreateEvent = () => {
   //   },3000);
   // }
 
+  const headTitle = (window.location.href).substring((window.location.href).indexOf("=") + 1, (window.location.href).length);
+
   return (
     <div className="content-wrapper">
+      <section className="content-header">
+        <h1>
+          {headTitle.substring(0, headTitle.indexOf("@") - 1)}: {headTitle.substring(headTitle.indexOf(":") + 1, headTitle.length)}
+          <small><i>"<strong>to.gather</strong> makes it possible!"</i></small>
+        </h1>
+      </section>
+
       <div className="form-container1">
         <div id="toast"></div>
         <form action="" className="form" onSubmit={handleSubmit}>
-          <h1 className="">To.gather makes it possible!</h1>
           <div className="row createEvent-container">
             <div className="form small-12 medium-3 large-3 column">
               <div className="form-group">

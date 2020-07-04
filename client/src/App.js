@@ -26,7 +26,7 @@ class App extends Component {
           <Route exact path="/home" component={Home} />
           <Route exact path="/events" component={Event} />
           <Route path="/events~category=:id" component={EventBranch} />
-          <Route exact path="/create-event" component={CreateEvent} />
+          <Route exact path="/create-event=:id" component={CreateEvent} />
           <Footer />
         </div>
       </Router>
