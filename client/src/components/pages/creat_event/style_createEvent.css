@@ -3,8 +3,10 @@
 }
 
 .createEvent-container {
-  padding-top: 5%;
-  padding-left: 5%;
+  /* padding-top: 5%; */
+  /* padding-left: 5%; */
+  margin-top: 25px;
+  margin-left: 30px;
 }
 
 .createEvent-form-container {

@@ -3,17 +3,10 @@ import "../../css/sign.css";
 
 
 function SignUp () {
-
-  // const styles = {
-  //   logo: { 
-  //     backgroundImage: `url(require("../../../public/assets/icons/logo.png"))` 
-  //   }
-  // }
-
   return (
     <div className="sign_container-root sign_container-max-width">
       <div className="sign_sign-up">
-        <img className="sign_logo-avatar sign_logo" src="./assets/icons/logo.png" />
+        <img className="sign_logo-avatar sign_logo" src="./assets/icons/logo.png" alt="logo" />
         <h1 className="sign_m-0 sign_typography-h">Sign up</h1>
         <form className="sign_full-width sign_m-t-24">
           <div className="sign_grid-container sign_grid-spacing-xs-1">

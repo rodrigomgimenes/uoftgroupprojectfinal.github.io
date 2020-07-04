@@ -44,6 +44,7 @@ class EventBranch extends Component {
             {eventObject[0][0].category.map(session =>
               (
                 <CardEventSpecific  
+                  eventid={eventObject[0][0].id} 
                   headtitle={eventObject[0][0].headtitle} 
                   category={session}
                 />

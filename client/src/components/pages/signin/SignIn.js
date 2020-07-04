@@ -3,21 +3,12 @@ import "../../css/sign.css";
 
 
 function SignIn () {
-  // const styles = {
-  //   logo: { 
-  //     backgroundImage: `url(require("./public/assets/icons/logo.png"))` 
-  //   },
-  //   signinImage: {
-  //     backgroundImage: `url(require("./public/assets/images/togather.jpeg"))` 
-  //   }
-  // }
-
   return (
     <div className="sign_full-height sign_grid-container">
       <div className="sign_bckg-cover sign_grid-item sign_grid-sm-2 sign_grid-md-2"></div>
       <div className="sign_paper sign_grid-item sign_grid-spacing-xs-2 sign_grid-sm-3 sign_grid-md-1 sign_paper-shadow">
         <div className="sign_sign-in">
-          <img className="sign_logo-avatar sign_logo" src="./assets/icons/logo.png" />
+          <img className="sign_logo-avatar sign_logo" src="./assets/icons/logo.png" alt="logo" />
           <h1 className="sign_m-0 sign_typography-h">Sign in</h1>
           <form className="sign_full-width sign_m-t-8" novalidate="">
             <div className="sign_form-control sign_m-t-b sign_full-width">
