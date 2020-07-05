@@ -4,6 +4,36 @@ import "./style.css";
 // import CreateEvent from "../creat_event";
 
 const CreateEvent = () => {
+  // =========== DON'T WORRY ABOUT THIS, I AM WORKING ON IT! =============
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("submit button");
+    const myNotification = window.createNotification({
+      // options here
+    });
+    // let list = document.getElementById("toast");
+    // list.classList.add("show");
+    // list.innerHTML =
+    //   '<i class="far fa-heart wish"></i> Event created successfully';
+    // setTimeout(function () {
+    //   list.classList.remove("show");
+    // }, 3000);
+  };
+
+  // function createEventSuccessfully() {
+  //   let list = document.getElementById("toast");
+  //   list.classList.add("show");
+  //   // list.add("show");
+  //   list.innerHTML = '<i class="far fa-heart wish"></i> Event created successfully';
+  //   setTimeout(function(){
+  //     list.classList.remove("show");
+  //     // list.remove("show");
+  //   },3000);
+  // }
+
+  const headTitle  = (window.location.href).substring((window.location.href).indexOf("=") + 1, (window.location.href).length);
+  const hrefCancel = `/events~category=${(headTitle).substring(0, (headTitle).indexOf(":"))}`;
+
   return (
     <div className="content-wrapper">
       <div className="form-container">
@@ -110,14 +140,28 @@ const CreateEvent = () => {
                   placeholder="Example input"
                 />
               </div>
-              <button type="button" className="btn btn-lg btn-success" >
+
+              <label for="exampleFormControlSelect1">Location</label>
+              <button id="map-btn" type="button" class="btn btn-info btn-lg createEvent-m-ml createEvent-d-block">
+                Go to map
+              </button>
+              <button
+                id="create-event-btn"
+                type="submit"
+                className="btn btn-md btn-success createEvent-m-ml"
+                onClick=""
+              >
                 Create event
               </button>
-              <button type="button" className="btn btn-danger btn-lg" >
-                Decline
-              </button>
-              {/* <button className="btn btn-success"  type="submit">Create</button>
-              <button type="button" className="btn btn-danger">Decline</button> */}
+              {/* <button
+                id="decline-btn"
+                type="cancel"
+                className="btn btn-danger btn-lg createEvent-m-ml createEvent-d-inline"
+                onClick=""
+              >
+                Cancel
+              </button> */}
+              <a href={hrefCancel} className="btn-custom btn-danger btn-md createEvent-m-ml createEvent-d-inline">Cancel</a>
             </div>
 
             <div
