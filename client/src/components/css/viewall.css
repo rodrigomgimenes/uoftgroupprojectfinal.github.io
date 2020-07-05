@@ -1,0 +1,28 @@
+.title-container{
+    width: 300px;
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+   }
+   
+   .submit{
+       width: 100px;
+   }
+   
+   .right{
+       float: right;
+   }
+   
+   .btn {
+       background-color: DodgerBlue; 
+       border: none;
+       color: white; 
+       padding: 12px 16px; 
+       font-size: 16px;
+       cursor: pointer; 
+   }
+     
+   .btn:hover {
+       background-color: RoyalBlue;
+   }
