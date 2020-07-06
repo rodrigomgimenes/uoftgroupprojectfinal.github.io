@@ -73,35 +73,87 @@ class ViewAll extends React.Component {
                 />
               </div>
             </div>
-
-            <div className="row">
-              <div className="title-container">
-                <ReactSearchBox
-                  placeholder="Title"
-                  value=""
-                  data={this.data}
-                  callback={(record) => console.log(record)}
-                />
-              </div>
-
-              <div className="title-container">
-                <ReactSearchBox
-                  placeholder="Location"
-                  value=""
-                  data={this.data}
-                  callback={(record) => console.log(record)}
-                />
-              </div>
-
-              <div className="title-container">
-                <ReactSearchBox
-                  placeholder="Time"
-                  value=""
-                  data={this.data}
-                  callback={(record) => console.log(record)}
-                />
-              </div>
+            <div class="homeT_wrapper">
+        <div class="homeT_table">
+          <div class="homeT_row homeT_header homeT_green">
+            <div class="homeT_cell">
+              Title
             </div>
+            <div class="homeT_cell">
+              Location
+            </div>
+            <div class="homeT_cell">
+              Event Date
+            </div>
+            <div class="homeT_cell">
+              Time
+            </div>
+          </div>    
+          <div class="homeT_row">
+            <div class="homeT_cell" data-title="Event Name">
+              Event 1
+            </div>
+            <div class="homeT_cell" data-title="Participants">
+              10
+            </div>
+            <div class="homeT_cell" data-title="Event Date">
+              09/15/2020
+            </div>
+            <div class="homeT_cell" data-title="Location">
+              8:00 AM
+            </div>
+            
+          </div>
+          
+          <div class="homeT_row">
+            <div class="homeT_cell" data-title="Event Name">
+              Event 2
+            </div>
+            <div class="homeT_cell" data-title="Participants">
+              40
+            </div>
+            <div class="homeT_cell" data-title="Event Date">
+              10/1/2020
+            </div>
+            <div class="homeT_cell" data-title="Location">
+              10:30 AM
+            </div>
+            
+          </div>
+          
+          <div class="homeT_row">
+            <div class="homeT_cell" data-title="Event Name">
+              Event 3
+            </div>
+            <div class="homeT_cell" data-title="Participants">
+              5
+            </div>
+            <div class="homeT_cell" data-title="Event Date">
+              10/20/2020
+            </div>
+            <div class="homeT_cell" data-title="Location">
+              1:30 PM
+            </div>
+            
+          </div>
+          
+          <div class="homeT_row">
+            <div class="homeT_cell" data-title="Event Name">
+              Event 4
+            </div>
+            <div class="homeT_cell" data-title="Participants">
+              20
+            </div>
+            <div class="homeT_cell" data-title="Event Date">
+              11/20/2020
+            </div>
+            <div class="homeT_cell" data-title="Location">
+              5:00 PM
+            </div>
+            
+          </div>
+        </div>
+      </div>
           </form>
         </section>
       </div>
