@@ -1,7 +1,7 @@
 import React from "react";
 import Maps from "../supplementary/Maps";
 
-import "./style_createEvent.css";
+import "../../css/style_createEvent.css";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 
@@ -42,7 +42,7 @@ const CreateEvent = () => {
     <div className="content-wrapper">
       <section className="content-header">
         <h1>
-          {headTitle.substring(0, headTitle.indexOf("@") - 1)}: {headTitle.substring(headTitle.indexOf(":") + 1, headTitle.length)}
+          <strong>{headTitle.substring(0, headTitle.indexOf("@") - 1).toUpperCase()}:</strong> {headTitle.substring(headTitle.indexOf(":") + 1, headTitle.length)}
           <small><i>"<strong>to.gather</strong> makes it possible!"</i></small>
         </h1>
       </section>
