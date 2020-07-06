@@ -23,7 +23,9 @@ function Home () {
         <div className="col-lg-6">
           <div className="home-href-img">
             <a href="/events">
-              <div className="home-href-events"></div>
+              <div className="home-href-events">
+                <span className="home-back-text">EVENTS</span>
+              </div>
             </a>
           </div>
         </div>
@@ -32,7 +34,9 @@ function Home () {
         <div className="col-lg-6">
           <div className="home-href-img">
             <a href="/all-events">
-              <div className="home-view-all"></div>
+              <div className="home-view-all">
+                <span className="home-back-text">VIEW ALL</span>
+              </div>
             </a>
           </div>
         </div>

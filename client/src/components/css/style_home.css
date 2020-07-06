@@ -5,6 +5,18 @@
     background-color: red;
 }
 
+.home-back-text {
+  position: absolute;
+  font-size: 66px;
+  font-weight: 900;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  z-index: 9;
+}
+
 .home-href-img {
   margin: 40px 16px 0 16px;
 }
