@@ -88,7 +88,7 @@ body::backdrop {
 .sign_bckg-cover {
   background-size: cover;
   background-color: #fafafa;
-  background-image: url(../pages/signin/togather.jpeg);
+  background-image: url(../pages/supplementary/images/togather.jpeg);
   background-repeat: no-repeat;
   background-position: center;
 }

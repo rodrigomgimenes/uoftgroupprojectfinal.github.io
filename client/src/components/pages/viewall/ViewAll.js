@@ -37,6 +37,7 @@ class ViewAll extends React.Component {
       <div className="content-wrapper">
         <section className="content-header">
           <h1>
+            View All
             <small>
               <i>"Start something new or join in.."</i>
             </small>
@@ -48,22 +49,11 @@ class ViewAll extends React.Component {
                 <span className="text-orange"> Main</span>
               </a>
             </li>
-            <li>
-              <a href="/events">
-                <span className="text-orange"> Events</span>
-              </a>
-            </li>
-            <li>
-              <a href="/viewall">
-                <i className="fas fa-door-open"></i>
-                <span className="text-orange"> View All</span>
-              </a>
-            </li>
+            <li>View All</li>
           </ol>
         </section>
 
         <section className="content-header">
-          <h2>View All</h2>
           <form>
             <div className="row">
               <select className="title-container" value={this.state.games}>
