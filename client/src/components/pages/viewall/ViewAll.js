@@ -102,8 +102,6 @@ class ViewAll extends React.Component {
                 />
               </div>
             </div>
-
-            <button class="btn"> Submit</button>
           </form>
         </section>
       </div>
