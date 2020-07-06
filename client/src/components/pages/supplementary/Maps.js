@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactMapGL, { Marker, Popup,  } from "react-map-gl";
-import * as parkDate from "./skateboard-parks.json";
+import * as parkDate from "./allsports.json";
+
 
 
 export default function Maps() {
@@ -49,7 +50,7 @@ export default function Maps() {
                 setSelectedPark(park);
               }}
             >
-              <img src="/skateboarding.svg" alt="Skate Park Icon" />
+              <img src="/assets/icons/tennis.svg" alt="Skate Park Icon" />
             </button>
           </Marker>
         ))}
