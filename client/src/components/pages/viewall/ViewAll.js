@@ -39,7 +39,7 @@ class ViewAll extends React.Component {
           <h1>
             View All
             <small>
-              <i>"Start something new or join in.."</i>
+              <i>"Check all the events that are happening, here!!"</i>
             </small>
           </h1>
           <ol className="breadcrumb">
