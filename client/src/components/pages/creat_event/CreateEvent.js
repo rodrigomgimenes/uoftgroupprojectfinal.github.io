@@ -203,10 +203,24 @@ const CreateEvent = () => {
                 </select>
               </div>
 
-              <label for="exampleFormControlSelect1">Location</label>
+              {/* <label for="exampleFormControlSelect1">Location</label>
               <button id="map-btn" type="button" class="btn btn-info btn-lg createEvent-m-ml createEvent-d-block">
                 Go to map
-              </button>
+              </button> */}
+              <div className="form-group">
+                <label for="event-title" id="form-event-title">
+                  Location
+                </label>
+                <div id="i-have-a-tooltip" data-description="Address">
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="eventAddress"
+                    aria-describedby="eventLocation"
+                    disabled
+                  />
+                </div>
+              </div>
               <button
                 id="create-event-btn"
                 type="submit"

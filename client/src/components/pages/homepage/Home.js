@@ -9,7 +9,7 @@ function Home () {
       <section className="content-header">
         <h1>
           Welcome
-          <small><i>"to.gather is an app to ....."</i></small>
+          <small><i>"Gather around, everyone is welcome here."</i></small>
         </h1>
         <ol className="breadcrumb">
           <li>
