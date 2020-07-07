@@ -2,21 +2,25 @@ const mongoose = require("mongoose");
 const db = require("../models");
 
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/togather"
+    // process.env.MONGODB_URI || 
+    "mongodb://localhost/togather",{
+        useNewUrlParser: true, useFindAndModify: false
+    }, (error) => console.log("ERROR" + error)
   );
 
   const eventSeed = [
       {
-        eventName: "Burnig Man",
+        eventName: "BURNING MAN",
         participants: 4,
-        eventDate: 06-24-2020
-
-
+        eventDate: 
+            new Date("12/04/2020"),
+        eventStart: Number,
+        eventEnd: Number,
+        location: String
       }
   ];
 
-  db.Recipe.remove({})
-  .then(() => db.Recipe.collection.insertMany(eventSeed))
+  db.CreateEvent.collection.insertMany(eventSeed)
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

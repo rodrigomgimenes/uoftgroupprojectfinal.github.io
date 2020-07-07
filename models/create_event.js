@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true});
+// mongoose.connect('mongodb://localhost/togather', {useNewUrlParser: true});
+const Schema = mongoose.Schema;
 
-const createEventSchema = new mongoose.Schema(
+const createEventSchema = new Schema(
     {
     eventName: {
       type: String,
@@ -31,9 +32,9 @@ const createEventSchema = new mongoose.Schema(
     },
 
     //this is the location from the 
-    Location: {
+    location: {
         type: String,
-        required: true
+        // required: true
     }
   });
   
