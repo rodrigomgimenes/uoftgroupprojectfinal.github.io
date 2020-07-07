@@ -1,2 +1,3 @@
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true});
+module.exports = {
+    CreateEvent: require("./create_event")
+}

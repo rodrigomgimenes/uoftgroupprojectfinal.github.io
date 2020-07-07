@@ -28,6 +28,9 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/togather", {
   useNewUrlParser: true,
   useFindAndModify: false
 });
+const idConnection = mongoose.connection;
+idConnection.on('error', () => console.log("ERROR"));
+idConnection.on('open', () => console.log("SUCCESS"));
 
 // Start the API server
 app.listen(PORT, function() {
