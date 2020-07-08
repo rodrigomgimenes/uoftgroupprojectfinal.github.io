@@ -40,7 +40,7 @@ class EventBranch extends Component {
         </section>
 
         <section className="content">
-          <div class="row">
+          <div className="row">
             {eventObject[0][0].category.map(session =>
               (
                 <CardEventSpecific  
