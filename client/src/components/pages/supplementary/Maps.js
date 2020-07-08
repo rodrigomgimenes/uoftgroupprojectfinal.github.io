@@ -17,6 +17,8 @@ export default function Maps(props) {
   const [selectedPark, setSelectedPark] = useState(null);
   const {onAddresschange}=props
 
+
+
   useEffect(() => {
     const listener = e => {
       if (e.key === "Escape") {
@@ -57,7 +59,8 @@ export default function Maps(props) {
                 )
               }}
             >
-              <img src="/assets/icons/tennis.svg" alt="Sports field" />
+              
+              <img className="mapImage" src="/assets/icons/tennis.svg" alt="Sports field" />
             </button>
           </Marker>
         ))}
