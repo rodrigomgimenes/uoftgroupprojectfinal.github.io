@@ -1,20 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import Maps from "../supplementary/Maps";
 
 import "../../css/style_createEvent.css";
-import Calendar from "react-calendar";
+// import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import Calendar1 from "../../calendar/Calendar1"
 
 // import CreateEvent from "../creat_event";
 
 const CreateEvent = () => {
+
+  const [calendar, setCalendar] = useState(new Date())
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    console.log(calendar)
+  };
   // =========== DON'T WORRY ABOUT THIS, I AM WORKING ON IT! =============
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("submit button");
-    const myNotification = window.createNotification({
-      // options here
-    });
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log("submit button");
+  //   const myNotification = window.createNotification({
+  //   });
     // let list = document.getElementById("toast");
     // list.classList.add("show");
     // list.innerHTML =
@@ -22,7 +29,7 @@ const CreateEvent = () => {
     // setTimeout(function () {
     //   list.classList.remove("show");
     // }, 3000);
-  };
+  // };
 
   // function createEventSuccessfully() {
   //   let list = document.getElementById("toast");
@@ -94,7 +101,7 @@ const CreateEvent = () => {
               </div>
               {/* To access this calendar do an "npm install react-calendar" in the project folder. */}
               <div className="calendar-container">
-                <Calendar />
+                <Calendar1 calendar={calendar} setCalendar={setCalendar} />
               </div>
 
               <div className="form-group createEvent-time-form">
