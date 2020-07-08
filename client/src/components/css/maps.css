@@ -23,3 +23,11 @@ code {
   width: 20px;
   height: 20px;
 }
+
+img {
+  width: 20px;
+  height: 30px;
+  background: none;
+  cursor: pointer;
+  background-image: none;
+}
