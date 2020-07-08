@@ -53,10 +53,7 @@ export default function Maps(props) {
               onClick={e => {
                 e.preventDefault();
                 setSelectedPark(park);
-                onAddresschange(
-                  park.properties.PARKADDRESS
-                 
-                )
+                onAddresschange(park.properties.PARKADDRESS)
               }}
             >
               
@@ -73,21 +70,10 @@ export default function Maps(props) {
               setSelectedPark(null);
             }}
           >
-            <div className="card-body">
-              <h2>{selectedPark.properties.NAME}</h2>
+            <div className="card-location">
+              <h6>{selectedPark.properties.NAME}</h6>
               {/* <p>{selectedPark.properties.DESCRIPTION}</p> */}
-              <button  className="btn-secondary"
-              onClick={e => {
-                e.preventDefault();
-                console.log("hello")
-                onAddresschange(
-                  selectedPark.properties.PARKADDRESS
-                 
-                )
-              }}> Select
-
-              </button>
-              </div>
+            </div>
           </Popup>
         ) : null}
       </ReactMapGL>

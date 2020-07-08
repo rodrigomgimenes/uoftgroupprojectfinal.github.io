@@ -37,12 +37,15 @@ const CreateEvent = () => {
 
   const headTitle  = (window.location.href).substring((window.location.href).indexOf("=") + 1, (window.location.href).length);
   const hrefCancel = `/events~category=${(headTitle).substring(0, (headTitle).indexOf(":"))}`;
+
+  const time = ['6:00 am', '6:30 am', '7:00 am', '7:30 am', '8:00 am', '8:30 am', '9:00 am', '9:30 am', '10:00 am', '10:30 am', '11:00 am', '11:30 am', '12:00 pm', '12:30 pm', '1:00 pm', '1:30 pm', '2:00 pm', '2:30 pm', '3:00 pm', '3:30 pm', '4:00 pm', '4:30 pm', '5:00 pm', '5:30 pm', '6:00 pm', '6:30 pm', '7:00 pm', '7:30 pm', '8:00 pm', '8:30 pm', '9:00 pm', '9:30 pm', '10:00 pm', '10:30 pm', '11:00 pm', '11:30 pm', '12:00 am', '12:30 am', '1:00 am', '1:30 am', '2:00 am', '2:30 am', '3:00 am', '3:30 am', '4:00 am', '4:30 am', '5:00 am', '5:30 am'];
+  const participants = [2, 3, 4, 5, 10, 20, 30]
+
   const[ selectedAddress, setSelectedAddress] =useState(null);
 
 
   function handleAddressChange(address){
-setSelectedAddress(address)
-console.log("hitttt")
+    setSelectedAddress(address)
   }
   return (
     <div className="content-wrapper">
@@ -76,26 +79,11 @@ console.log("hitttt")
               <div className="form-group">
                 <label for="exampleFormControlSelect1">Participants</label>
                 <select className="form-control" id="form-participants">
-                  <option value>1</option>
-                  <option value>2</option>
-                  <option value>3</option>
-                  <option value>4</option>
-                  <option value>5</option>
-                  <option value>6</option>
-                  <option value>7</option>
-                  <option value>8</option>
-                  <option value>9</option>
-                  <option value>10</option>
-                  <option value>11</option>
-                  <option value>12</option>
-                  <option value>13</option>
-                  <option value>14</option>
-                  <option value>15</option>
-                  <option value>16</option>
-                  <option value>17</option>
-                  <option value>18</option>
-                  <option value>19</option>
-                  <option value>20</option>
+                  {participants.map(pnumber => (
+                    <option value={pnumber}>
+                      {pnumber}
+                    </option>
+                  ))}
                 </select>
               </div>
               {/* To access this calendar do an "npm install react-calendar" in the project folder. */}
@@ -106,106 +94,22 @@ console.log("hitttt")
               <div className="form-group createEvent-time-form">
                 <label for="exampleFormControlSelect1">Event start</label>
                 <select className="form-control" id="form-event-start-time">
-                  <option value="6:00 am">6:00 am </option>
-                  <option value="6:30 am">6:30 am </option>
-                  <option value="7:00 am">7:00 am </option>
-                  <option value="7:30 am">7:30 am </option>
-                  <option value="8:00 am">8:00 am </option>
-                  <option value="8:30 am">8:30 am </option>
-                  <option value="9:00 am">9:00 am </option>
-                  <option value="9:30 am">9:30 am </option>
-                  <option value="10:00 am">10:00 am </option>
-                  <option value="10:30 am">10:30 am </option>
-                  <option value="11:00 am">11:00 am </option>
-                  <option value="11:30 am">11:30 am </option>
-                  <option value="12:00 pm">12:00 pm </option>
-                  <option value="12:30 pm">12:30 pm </option>
-                  <option value="1:00 pm">1:00 pm </option>
-                  <option value="1:30 pm">1:30 pm </option>
-                  <option value="2:00 pm">2:00 pm </option>
-                  <option value="2:30 pm">2:30 pm </option>
-                  <option value="3:00 pm">3:00 pm </option>
-                  <option value="3:30 pm">3:30 pm </option>
-                  <option value="4:00 pm">4:00 pm </option>
-                  <option value="4:30 pm">4:30 pm </option>
-                  <option value="5:00 pm">5:00 pm </option>
-                  <option value="5:30 pm">5:30 pm </option>
-                  <option value="6:00 pm">6:00 pm </option>
-                  <option value="6:30 pm">6:30 pm </option>
-                  <option value="7:00 pm">7:00 pm </option>
-                  <option value="7:30 pm">7:30 pm </option>
-                  <option value="8:00 pm">8:00 pm </option>
-                  <option value="8:30 pm">8:30 pm </option>
-                  <option value="9:00 pm">9:00 pm </option>
-                  <option value="9:30 pm">9:30 pm </option>
-                  <option value="10:00 pm">10:00 pm </option>
-                  <option value="10:30 pm">10:30 pm </option>
-                  <option value="11:00 pm">11:00 pm </option>
-                  <option value="11:30 pm">11:30 pm </option>
-                  <option value="12:00 pm">12:00 pm </option>
-                  <option value="1:00 am">1:00 am </option>
-                  <option value="1:30 am">1:30 am </option>
-                  <option value="2:00 am">2:00 am </option>
-                  <option value="2:30 am">2:30 am </option>
-                  <option value="3:00 am">3:00 am </option>
-                  <option value="3:30 am">3:30 am </option>
-                  <option value="4:00 am">4:00 am </option>
-                  <option value="4:30 am">4:30 am </option>
-                  <option value="5:00 am">5:00 am </option>
-                  <option value="5:30 am">5:30 am </option>
+                  {time.map(starttime => (
+                    <option value={starttime}>
+                      {starttime}
+                    </option>
+                  ))}
                 </select>
               </div>
 
               <div className="form-group createEvent-time-form">
                 <label for="exampleFormControlSelect1">Event end</label>
                 <select className="form-control" id="form-event-end-time">
-                  <option value="7:00 am">7:00 am </option>
-                  <option value="7:30 am">7:30 am </option>
-                  <option value="8:00 am">8:00 am </option>
-                  <option value="8:30 am">8:30 am </option>
-                  <option value="9:00 am">9:00 am </option>
-                  <option value="9:30 am">9:30 am </option>
-                  <option value="10:00 am">10:00 am </option>
-                  <option value="10:30 am">10:30 am </option>
-                  <option value="11:00 am">11:00 am </option>
-                  <option value="11:30 am">11:30 am </option>
-                  <option value="12:00 pm">12:00 pm </option>
-                  <option value="12:30 pm">12:30 pm </option>
-                  <option value="1:00 pm">1:00 pm </option>
-                  <option value="1:30 pm">1:30 pm </option>
-                  <option value="2:00 pm">2:00 pm </option>
-                  <option value="2:30 pm">2:30 pm </option>
-                  <option value="3:00 pm">3:00 pm </option>
-                  <option value="3:30 pm">3:30 pm </option>
-                  <option value="4:00 pm">4:00 pm </option>
-                  <option value="4:30 pm">4:30 pm </option>
-                  <option value="5:00 pm">5:00 pm </option>
-                  <option value="5:30 pm">5:30 pm </option>
-                  <option value="6:00 pm">6:00 pm </option>
-                  <option value="6:30 pm">6:30 pm </option>
-                  <option value="7:00 pm">7:00 pm </option>
-                  <option value="7:30 pm">7:30 pm </option>
-                  <option value="8:00 pm">8:00 pm </option>
-                  <option value="8:30 pm">8:30 pm </option>
-                  <option value="9:00 pm">9:00 pm </option>
-                  <option value="9:30 pm">9:30 pm </option>
-                  <option value="10:00 pm">10:00 pm </option>
-                  <option value="10:30 pm">10:30 pm </option>
-                  <option value="11:00 pm">11:00 pm </option>
-                  <option value="11:30 pm">11:30 pm </option>
-                  <option value="12:00 pm">12:00 pm </option>
-                  <option value="1:00 am">1:00 am </option>
-                  <option value="1:30 am">1:30 am </option>
-                  <option value="2:00 am">2:00 am </option>
-                  <option value="2:30 am">2:30 am </option>
-                  <option value="3:00 am">3:00 am </option>
-                  <option value="3:30 am">3:30 am </option>
-                  <option value="4:00 am">4:00 am </option>
-                  <option value="4:30 am">4:30 am </option>
-                  <option value="5:00 am">5:00 am </option>
-                  <option value="5:30 am">5:30 am </option>
-                  <option value="6:00 am">6 am </option>
-                  <option value="6:30 am">6:30 am </option>
+                  {time.map(endtime => (
+                    <option value={endtime}>
+                      {endtime}
+                    </option>
+                  ))}
                 </select>
               </div>
 
