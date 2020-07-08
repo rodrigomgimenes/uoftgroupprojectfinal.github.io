@@ -76,185 +76,185 @@ function Home () {
         </div> */}
       </div>
 
-      <div class="homeT_wrapper">
-        <div class="homeT_table">
-          <div class="homeT_row homeT_header homeT_green">
-            <div class="homeT_cell">
+      <div className="homeT_wrapper">
+        <div className="homeT_table">
+          <div className="homeT_row homeT_header homeT_green">
+            <div className="homeT_cell">
               Event Name
             </div>
-            <div class="homeT_cell">
+            <div className="homeT_cell">
               Participants
             </div>
-            <div class="homeT_cell">
+            <div className="homeT_cell">
               Event Date
             </div>
-            <div class="homeT_cell">
+            <div className="homeT_cell">
               Location
             </div>
-            <div class="homeT_cell">
+            <div className="homeT_cell">
               Status
             </div>
           </div>    
-          <div class="homeT_row">
-            <div class="homeT_cell" data-title="Event Name">
+          <div className="homeT_row">
+            <div className="homeT_cell" data-title="Event Name">
               Event 1
             </div>
-            <div class="homeT_cell" data-title="Participants">
+            <div className="homeT_cell" data-title="Participants">
               10
             </div>
-            <div class="homeT_cell" data-title="Event Date">
+            <div className="homeT_cell" data-title="Event Date">
               09/15/2020
             </div>
-            <div class="homeT_cell" data-title="Location">
+            <div className="homeT_cell" data-title="Location">
               Toronto, CA
             </div>
-            <div class="homeT_cell" data-title="Status">
+            <div className="homeT_cell" data-title="Status">
               Created
             </div>
           </div>
           
-          <div class="homeT_row">
-            <div class="homeT_cell" data-title="Event Name">
+          <div className="homeT_row">
+            <div className="homeT_cell" data-title="Event Name">
               Event 2
             </div>
-            <div class="homeT_cell" data-title="Participants">
+            <div className="homeT_cell" data-title="Participants">
               40
             </div>
-            <div class="homeT_cell" data-title="Event Date">
+            <div className="homeT_cell" data-title="Event Date">
               10/1/2020
             </div>
-            <div class="homeT_cell" data-title="Location">
+            <div className="homeT_cell" data-title="Location">
               Toronto, CA
             </div>
-            <div class="homeT_cell" data-title="Status">
+            <div className="homeT_cell" data-title="Status">
               Created
             </div>
           </div>
           
-          <div class="homeT_row">
-            <div class="homeT_cell" data-title="Event Name">
+          <div className="homeT_row">
+            <div className="homeT_cell" data-title="Event Name">
               Event 3
             </div>
-            <div class="homeT_cell" data-title="Participants">
+            <div className="homeT_cell" data-title="Participants">
               5
             </div>
-            <div class="homeT_cell" data-title="Event Date">
+            <div className="homeT_cell" data-title="Event Date">
               10/20/2020
             </div>
-            <div class="homeT_cell" data-title="Location">
+            <div className="homeT_cell" data-title="Location">
               Toronto, CA
             </div>
-            <div class="homeT_cell" data-title="Status">
+            <div className="homeT_cell" data-title="Status">
               Created
             </div>
           </div>
           
-          <div class="homeT_row">
-            <div class="homeT_cell" data-title="Event Name">
+          <div className="homeT_row">
+            <div className="homeT_cell" data-title="Event Name">
               Event 4
             </div>
-            <div class="homeT_cell" data-title="Participants">
+            <div className="homeT_cell" data-title="Participants">
               20
             </div>
-            <div class="homeT_cell" data-title="Event Date">
+            <div className="homeT_cell" data-title="Event Date">
               11/20/2020
             </div>
-            <div class="homeT_cell" data-title="Location">
+            <div className="homeT_cell" data-title="Location">
               Toronto, CA
             </div>
-            <div class="homeT_cell" data-title="Status">
+            <div className="homeT_cell" data-title="Status">
               Created
             </div>
           </div>
         </div>
   
-        <div class="homeT_table">
-          <div class="homeT_row homeT_header homeT_blue">
-            <div class="homeT_cell">
+        <div className="homeT_table">
+          <div className="homeT_row homeT_header homeT_blue">
+            <div className="homeT_cell">
               Event Name
             </div>
-            <div class="homeT_cell">
+            <div className="homeT_cell">
               Participants
             </div>
-            <div class="homeT_cell">
+            <div className="homeT_cell">
               Event Date
             </div>
-            <div class="homeT_cell">
+            <div className="homeT_cell">
               Location
             </div>
-            <div class="homeT_cell">
+            <div className="homeT_cell">
               Status
             </div>
           </div>
           
-          <div class="homeT_row">
-            <div class="homeT_cell" data-title="Event Name">
+          <div className="homeT_row">
+            <div className="homeT_cell" data-title="Event Name">
               Event 1
             </div>
-            <div class="homeT_cell" data-title="Participants">
+            <div className="homeT_cell" data-title="Participants">
               10
             </div>
-            <div class="homeT_cell" data-title="Event Date">
+            <div className="homeT_cell" data-title="Event Date">
               09/15/2020
             </div>
-            <div class="homeT_cell" data-title="Location">
+            <div className="homeT_cell" data-title="Location">
               Toronto, CA
             </div>
-            <div class="homeT_cell" data-title="Status">
+            <div className="homeT_cell" data-title="Status">
               Joined
             </div>
           </div>
           
-          <div class="homeT_row">
-            <div class="homeT_cell" data-title="Event Name">
+          <div className="homeT_row">
+            <div className="homeT_cell" data-title="Event Name">
               Event 2
             </div>
-            <div class="homeT_cell" data-title="Participants">
+            <div className="homeT_cell" data-title="Participants">
               40
             </div>
-            <div class="homeT_cell" data-title="Event Date">
+            <div className="homeT_cell" data-title="Event Date">
               10/1/2020
             </div>
-            <div class="homeT_cell" data-title="Location">
+            <div className="homeT_cell" data-title="Location">
               Toronto, CA
             </div>
-            <div class="homeT_cell" data-title="Status">
+            <div className="homeT_cell" data-title="Status">
               Joined
             </div>
           </div>
           
-          <div class="homeT_row">
-            <div class="homeT_cell" data-title="Event Name">
+          <div className="homeT_row">
+            <div className="homeT_cell" data-title="Event Name">
               Event 3
             </div>
-            <div class="homeT_cell" data-title="Participants">
+            <div className="homeT_cell" data-title="Participants">
               5
             </div>
-            <div class="homeT_cell" data-title="Event Date">
+            <div className="homeT_cell" data-title="Event Date">
               10/20/2020
             </div>
-            <div class="homeT_cell" data-title="Location">
+            <div className="homeT_cell" data-title="Location">
               Toronto, CA
             </div>
-            <div class="homeT_cell" data-title="Status">
+            <div className="homeT_cell" data-title="Status">
               Joined
             </div>
           </div>
           
-          <div class="homeT_row">
-            <div class="homeT_cell" data-title="Event Name">
+          <div className="homeT_row">
+            <div className="homeT_cell" data-title="Event Name">
               Event 4
             </div>
-            <div class="homeT_cell" data-title="Participants">
+            <div className="homeT_cell" data-title="Participants">
               20
             </div>
-            <div class="homeT_cell" data-title="Event Date">
+            <div className="homeT_cell" data-title="Event Date">
               11/20/2020
             </div>
-            <div class="homeT_cell" data-title="Location">
+            <div className="homeT_cell" data-title="Location">
               Toronto, CA
             </div>
-            <div class="homeT_cell" data-title="Status">
+            <div className="homeT_cell" data-title="Status">
               Joined
             </div>
           </div>

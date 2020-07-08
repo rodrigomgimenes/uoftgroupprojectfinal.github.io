@@ -66,15 +66,20 @@
 
   @media (max-width: 770px) {
     .createEvent-container {
-        padding: 5%;
+      padding: 5%;
     }
     .createEvent-input {
       margin: 100px;
-  }
+    }
 
-  .createEvent-right-row {
-    margin-left: 0px;
-  }
+    .createEvent-right-row {
+      margin-left: 0px;
+      width: 83%;
+    }
+
+    .createEvent-button {
+      padding-left: 5%;
+    }
   /* .createEvent-form-container { */
     /* padding: 20px; */
     /* margin: 20px 200px 20px 200px; */
@@ -112,4 +117,9 @@
   line-height: 1.5;
   border-radius: .25rem;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.createEvent-button {
+  margin-top: 10px;
+  margin-left: 30px;
 }
