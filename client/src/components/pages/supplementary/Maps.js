@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import ReactMapGL, { Marker, Popup,  } from "react-map-gl";
 import * as parkDate from "./allsports.json";
+import "../../css/maps.css";
 
 
 
-export default function Maps() {
+
+export default function Maps(props) {
   const [viewport, setViewport] = useState({
     latitude:   43.6532,
     longitude: -79.3832,
@@ -13,6 +15,7 @@ export default function Maps() {
     zoom: 8
   });
   const [selectedPark, setSelectedPark] = useState(null);
+  const {onAddresschange}=props
 
   useEffect(() => {
     const listener = e => {
@@ -48,9 +51,13 @@ export default function Maps() {
               onClick={e => {
                 e.preventDefault();
                 setSelectedPark(park);
+                onAddresschange(
+                  park.properties.PARKADDRESS
+                 
+                )
               }}
             >
-              <img src="/assets/icons/tennis.svg" alt="Skate Park Icon" />
+              <img src="/assets/icons/tennis.svg" alt="Sports field" />
             </button>
           </Marker>
         ))}
@@ -68,7 +75,12 @@ export default function Maps() {
               {/* <p>{selectedPark.properties.DESCRIPTION}</p> */}
               <button  className="btn-secondary"
               onClick={e => {
-               
+                e.preventDefault();
+                console.log("hello")
+                onAddresschange(
+                  selectedPark.properties.PARKADDRESS
+                 
+                )
               }}> Select
 
               </button>
