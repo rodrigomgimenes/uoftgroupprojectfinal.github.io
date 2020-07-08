@@ -22,14 +22,10 @@
   "dependencies": {
     "express": "^4.16.3",
     "foundation-sites": "^6.6.3",
-    "if-env": "^1.0.4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rodrigomgimenes/uoftgroupprojectfinal.github.io.git"
-  },
-  "bugs": {
-    "url": "https://github.com/rodrigomgimenes/uoftgroupprojectfinal.github.io/issues"
-  },
-  "homepage": "https://github.com/rodrigomgimenes/uoftgroupprojectfinal.github.io#readme"
+
+    "if-env": "^1.0.4",
+    "mongoose": "^5.9.21",
+    "react-search-box": "^2.0.2"
+  }
+
 }
