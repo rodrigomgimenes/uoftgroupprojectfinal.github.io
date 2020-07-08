@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Maps from "../supplementary/Maps";
 
 import "../../css/style_createEvent.css";
@@ -37,7 +37,13 @@ const CreateEvent = () => {
 
   const headTitle  = (window.location.href).substring((window.location.href).indexOf("=") + 1, (window.location.href).length);
   const hrefCancel = `/events~category=${(headTitle).substring(0, (headTitle).indexOf(":"))}`;
+  const[ selectedAddress, setSelectedAddress] =useState(null);
 
+
+  function handleAddressChange(address){
+setSelectedAddress(address)
+console.log("hitttt")
+  }
   return (
     <div className="content-wrapper">
       <section className="content-header">
@@ -213,6 +219,7 @@ const CreateEvent = () => {
                 </label>
                 <div id="i-have-a-tooltip" data-description="Address">
                   <input
+                    value ={selectedAddress}
                     type="text"
                     className="form-control"
                     id="eventAddress"
@@ -254,7 +261,7 @@ const CreateEvent = () => {
                 ></textarea>
           {/* ==================Maps=================== */}
                 <section className="content">
-                  <Maps />
+                  <Maps onAddresschange={handleAddressChange} />
                 </section>
                 
               </div>

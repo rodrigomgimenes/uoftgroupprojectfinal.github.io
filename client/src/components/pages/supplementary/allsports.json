@@ -6,9 +6,8 @@
   },
   "features": [
     {
-      "type": "Feature",
+      "type": "Tennis",
       "properties": {
-        "SPORT_TYPE": "Tennis",
         "PARK_ID": 2875,
         "FACILITYID": 1,
         "NAME": "ALAMOSA PARK - Tennis Court Area",
@@ -22,9 +21,8 @@
       }
     },
     {
-      "type": "Feature",
+      "type": "Tennis",
       "properties": {
-        "SPORT_TYPE": "Tennis",
         "PARK_ID": 3563,
         "FACILITYID": 2,
         "NAME": "ALBION GARDENS PARK - Tennis Court Area",
@@ -38,7 +36,7 @@
       }
     },
     {
-      "type": "Feature",
+      "type": "Tennis",
       "properties": {
         "SPORT_TYPE": "Tennis",
         "PARK_ID": 3549,
@@ -54,7 +52,7 @@
       }
     },
     {
-      "type": "Feature",
+      "type": "Tennis",
       "properties": {
         "PARK_ID": 3247,
         "FACILITYID": 4,
@@ -69,7 +67,7 @@
       }
     },
     {
-      "type": "Feature",
+      "type": "Tennis",
       "properties": {
         "PARK_ID": 3537,
         "FACILITYID": 5,
@@ -87,7 +85,7 @@
 
     
     {
-      "type": "Feature",
+      "type": "Volleyball",
       "properties": {
         "PARK_ID": 1234,
         "FACILITYID": 6,
@@ -102,7 +100,7 @@
       }
     },
     {
-      "type": "Feature",
+      "type": "Volleyball",
       "properties": {
         "PARK_ID": 2345,
         "FACILITYID": 7,
@@ -117,7 +115,7 @@
       }
     },
     {
-      "type": "Feature",
+      "type": "Volleyball",
       "properties": {
         "PARK_ID": 3456,
         "FACILITYID": 8,
@@ -132,7 +130,7 @@
       }
     },
     {
-      "type": "Feature",
+      "type": "Volleyball",
       "properties": {
         "PARK_ID": 4567,
         "FACILITYID": 9,
@@ -147,7 +145,7 @@
       }
     },
     {
-      "type": "Feature",
+      "type": "Volleyball",
       "properties": {
         "PARK_ID": 5678,
         "FACILITYID": 10,
@@ -160,6 +158,173 @@
         "type": "Point",
         "coordinates": [-79.475100, 43.708260]
       }
+    },
+
+    {
+      "type": "Soccer",
+      "properties": {
+        "PARK_ID": 35481,
+        "FACILITYID": 29,
+        "NAME": "CENTRAL TECH STADIUM",
+        "PICTURE_DESCRIPTION": null,
+        "PARKADDRESS": "725 BATHURST ST, TORONTO M5S 2R5",
+        "DESCRIPTION": "OUTDOOR TURF WITH AN OPTION FOR AN INDOOR DOME DURING WINTER MONTHS"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-79.4090372, 43.6644561]
+      }
+    },
+    {
+      "type": "Soccer",
+      "properties": {
+        "PARK_ID": 35480,
+        "FACILITYID": 30,
+        "NAME": "CHERRY BEACH SPORTS FIELD",
+        "PICTURE_DESCRIPTION": null,
+        "PARKADDRESS": "275 UNWIN AVE, TORONTO, ON M5A 3K8",
+        "DESCRIPTION": "OUTDOOR TURF WITH AN OPTION FOR AN INDOOR DOME DURING WINTER MONTHS"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-79.3411649, 43.6406123]
+      }
+    },
+    {
+      "type": "Soccer",
+      "properties": {
+        "PARK_ID": 35496,
+        "FACILITYID": 31,
+        "NAME": "TORONTO DOWNSVIEW HANGER",
+        "PICTURE_DESCRIPTION": null,
+        "PARKADDRESS": "75 CARL HALL RD, NORTH YORK M3K 2B9",
+        "DESCRIPTION": "MULTIPLE OUTDOOR TURF FIELD, ONE GRASS FIELD AND MULTIPLE INDOOR TURF FIELDS WITH WASHROOM FACILITIES AND LOCKERS "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-79.4736371, 43.7470722]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 35497,
+        "FACILITYID": 32,
+        "NAME": "REGENT PARK ATHLETIC",
+        "PICTURE_DESCRIPTION": null,
+        "PARKADDRESS": "480 SHUTER ST, TORONTO, ON M5A 3K1",
+        "DESCRIPTION": "OUTDOOR GRASS FIELDS"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-79.3594602, 43.6591183]
+      }
+    },
+    {
+      "type": "Soccer",
+      "properties": {
+        "PARK_ID": 35498,
+        "FACILITYID": 33,
+        "NAME": "MONARCH PARK STADIUM",
+        "PICTURE_DESCRIPTION": null,
+        "PARKADDRESS": "1 PARKMOUNTH RD, TORONTO, ON M4J 0A5",
+        "DESCRIPTION": "OUTDOOR TURF WITH AN OPTION FOR AN INDOOR DOME DURING WINTER MONTHS"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-79.3228950, 43.6785274]
+      }
+    },
+    {
+      "type": "Soccer",
+      "properties": {
+        "PARK_ID": 35499,
+        "FACILITYID": 34,
+        "NAME": "TORONTO SOCCERPLEX",
+        "PICTURE_DESCRIPTION": null,
+        "PARKADDRESS": "101 RAILSIDE RD, NORTH YORK, ON  M3A 1B2",
+        "DESCRIPTION": "OUTDOOR TURF WITH AN OPTION FOR AN INDOOR DOME DURING WINTER MONTHS"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-79.3252195, 43.7355004]
+      }
+    },
+    {
+      "type": "Basketball",
+      "properties": {
+        "PARK_ID": 35491,
+        "FACILITYID": 41,
+        "NAME": "DAVID CROMBIE PARK BASKETBALL COURT",
+        "PICTURE_DESCRIPTION": null,
+        "PARKADDRESS": "115 SCADDING AVE, TORONTO, ON M5A 4H8",
+        "DESCRIPTION": "A lovely community basketball court right in the middle of David Crombie Park."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-79.3643409, 43.6496422]
+      }
+    },
+      {
+      "type": "Basketball",
+      "properties": {
+        "PARK_ID": 35492,
+        "FACILITYID": 42,
+        "NAME": "HOOPDOME",
+        "PICTURE_DESCRIPTION": null,
+        "PARKADDRESS": "75 CARL HALL RD, NORTH YORK M3K 2B9",
+        "DESCRIPTION": "Amateur basketball centre with 4 full courts & 3 half courts offering league play & pickup games."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-79.4736371, 43.7470722]
+      }
+    },
+     {
+      "type": "Basketball",
+      "properties": {
+        "PARK_ID": 35493,
+        "FACILITYID": 43,
+        "NAME": "CHRISTIE PITS PARK",
+        "PICTURE_DESCRIPTION": null,
+        "PARKADDRESS": "750 Bloor St W, Toronto, ON M6G 3K4",
+        "DESCRIPTION": "Christie Pits, is a public recreational area in Toronto, Ontario, Canada."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-79.4207866, 43.6649845]
+      }
+    },
+      {
+      "type": "Basketball",
+      "properties": {
+        "PARK_ID": 35494,
+        "FACILITYID": 44,
+        "NAME": "Edgewood PS Basketball Court",
+        "PICTURE_DESCRIPTION": null,
+        "PARKADDRESS": "Toronto, ON M1P 3S4",
+        "DESCRIPTION": "GREAT COURTS WITHS NETS IN THE HEART OF TORONTO"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-79.2663772, 43.764929]
+      }
+    },
+    {
+      "type": "Basketball",
+      "properties": {
+        "PARK_ID": 35495,
+        "FACILITYID": 45,
+        "NAME": "Dufferin Grove Park",
+        "PICTURE_DESCRIPTION": null,
+        "PARKADDRESS": " 875 Dufferin St, Toronto, ON M6H 3K8",
+        "DESCRIPTION": "Dufferin Grove Park is a park in the Dufferin Grove neighbourhood of Toronto"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-79.4328264, 43.6567468]
+      }
     }
+  
   ]
 }
