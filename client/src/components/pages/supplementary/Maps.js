@@ -17,6 +17,8 @@ export default function Maps(props) {
   const [selectedPark, setSelectedPark] = useState(null);
   const {onAddresschange}=props
 
+
+
   useEffect(() => {
     const listener = e => {
       if (e.key === "Escape") {
@@ -51,13 +53,11 @@ export default function Maps(props) {
               onClick={e => {
                 e.preventDefault();
                 setSelectedPark(park);
-                onAddresschange(
-                  park.properties.PARKADDRESS
-                 
-                )
+                onAddresschange(park.properties.PARKADDRESS)
               }}
             >
-              <img src="/assets/icons/tennis.svg" alt="Sports field" />
+              
+              <img className="mapImage" src="/assets/icons/tennis.svg" alt="Sports field" />
             </button>
           </Marker>
         ))}
@@ -70,21 +70,10 @@ export default function Maps(props) {
               setSelectedPark(null);
             }}
           >
-            <div className="card-body">
-              <h2>{selectedPark.properties.NAME}</h2>
+            <div className="card-location">
+              <h6>{selectedPark.properties.NAME}</h6>
               {/* <p>{selectedPark.properties.DESCRIPTION}</p> */}
-              <button  className="btn-secondary"
-              onClick={e => {
-                e.preventDefault();
-                console.log("hello")
-                onAddresschange(
-                  selectedPark.properties.PARKADDRESS
-                 
-                )
-              }}> Select
-
-              </button>
-              </div>
+            </div>
           </Popup>
         ) : null}
       </ReactMapGL>
