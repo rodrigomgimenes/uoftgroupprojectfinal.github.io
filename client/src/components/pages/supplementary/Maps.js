@@ -15,8 +15,10 @@ export default function Maps(props) {
     zoom: 8
   });
   const [selectedPark, setSelectedPark] = useState(null);
-  const {onAddresschange}=props
+  const {onAddresschange, type}=props
 
+  console.log("type");
+  console.log(type);
 
 
   useEffect(() => {
@@ -42,7 +44,7 @@ export default function Maps(props) {
           setViewport(viewport);
         }}
       >
-        {parkDate.features.map(park => (
+        {parkDate.features.filter((park) => { return park.type === type}).map(park => (
           <Marker
             key={park.properties.PARK_ID}
             latitude={park.geometry.coordinates[1]}

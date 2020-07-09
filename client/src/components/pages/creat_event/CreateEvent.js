@@ -47,6 +47,7 @@ const CreateEvent = () => {
   const participants = [2, 3, 4, 5, 10, 20, 30]
 
   const[ selectedAddress, setSelectedAddress] =useState(null);
+  const sport = headTitle.substring(headTitle.indexOf(":") + 1, headTitle.length)
 
   // const FORMAT = 'MM/dd/yyyy';
   function disabledSeconds(h, m) {
@@ -63,7 +64,7 @@ const CreateEvent = () => {
     <div className="content-wrapper">
       <section className="content-header">
         <h1>
-          <strong>{headTitle.substring(0, headTitle.indexOf("@") - 1).toUpperCase()}:</strong> {headTitle.substring(headTitle.indexOf(":") + 1, headTitle.length)}
+          <strong>{headTitle.substring(0, headTitle.indexOf("@") - 1).toUpperCase()}:</strong> {sport}
           <small><i>"<strong>to.gather</strong> makes it possible!"</i></small>
         </h1>
       </section>
@@ -232,7 +233,7 @@ const CreateEvent = () => {
                 ></textarea> */}
                 {/* ==================Maps=================== */}
                 <section className="map-content">
-                  <Maps onAddresschange={handleAddressChange} />
+                  <Maps onAddresschange={handleAddressChange} type={sport} />
                 </section>
                 
               </div>
