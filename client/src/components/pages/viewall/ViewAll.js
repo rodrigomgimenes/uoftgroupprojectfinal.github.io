@@ -1,21 +1,92 @@
 import React from "react";
 // import React, { Component } from "react";
 import "../../css/viewall.css";
-import CardEvent from "../supplementary/CardEvent";
+// import {getEvents} from "../../../scripts/seedDB";
+
 
 // CSS
 import "../../css/mainwindow.css";
 import "../../css/card.css";
 import ReactSearchBox from "react-search-box";
 
-const events = [];
- fetch("../supplementary/togather.json")
-.then(response => response.json())
-.then(data => events = data);
+// const db = require("../../../models/create_event")
+// console.log(db);
+// const getEvents = () => {
+//   db.CreateEvent.collection.find()
+//         .then(data =>{  
+//             console.log(data);
+            
+//         })
+//         .catch(err => { 
+//           console.log(err);
+//         })
+// // }
 
+
+
+// const events = [];
+const events = [
+    {
+      "eventId": "1",
+      "eventTitle": "Soccer",
+      "eventLocation": "High Park",
+      "eventDate": "7/15/2020",
+      "eventStartTime": "8:30am",
+      "eventEndTime": "11:00am",
+      "eventStatus": "Open",
+      "eventParticipants": "7"
+    },
+    {
+      "eventId": "2",
+      "eventTitle": "Volley ball",
+      "eventLocation": "High Park",
+      "eventDate": "7/15/2020",
+      "eventStartTime": "8:30am",
+      "eventEndTime": "11:00am",
+      "eventStatus": "Open",
+      "eventParticipants": "7"
+    },
+    {
+      "eventId": "3",
+      "eventTitle": "Basketball",
+      "eventLocation": "High Park",
+      "eventDate": "7/15/2020",
+      "eventStartTime": "8:30am",
+      "eventEndTime": "11:00am",
+      "eventStatus": "closed",
+      "eventParticipants": "7"
+    },
+    {
+      "eventId": "4",
+      "eventTitle": "Tennis",
+      "eventLocation": "High Park",
+      "eventDate": "7/15/2020",
+      "eventStartTime": "8:30am",
+      "eventEndTime": "11:00am",
+      "eventStatus": "Open",
+      "eventParticipants": "7"
+    }
+  
+];
+
+// MongoClient.connect(url, (err,client) =>{
+//   if (err) console.log(err);
+  
+//   const db = client.db('*The DB that needs to be connected*');
+  
+//   db.collection('customers').find({ field:'Value' }).toArray((err, data) =>{
+//    if (err) console.log(err)
+//    else{
+//     data.forEach(
+//      (doc) => {
+//       console.log(doc.name);
+//       }
+//     );
+    
+//    }
+//   });
+ 
 class ViewAll extends React.Component {
-  togatherList = require("../supplementary/togather.json");
-
   state = {
     savedEvents : events ?? [],
   };
@@ -74,7 +145,7 @@ class ViewAll extends React.Component {
                 </div>
 
                 {this.state.savedEvents.map((event) => (
-                  <div className="homeT_row">
+                  <div className="homeT_row" key={event.eventId}>
                     <div className="homeT_cell" data-title="Event Name">
                       {event.eventTitle}
                     </div>
