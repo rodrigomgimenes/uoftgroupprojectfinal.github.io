@@ -10,17 +10,31 @@ import 'rc-time-picker/assets/index.css';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import 'react-day-picker/lib/style.css';
 
+//API requests
+import createEventAPI from "../../../API/eventAPI"
+
 // import CreateEvent from "../creat_event";
 
 
 const CreateEvent = () => {
   // =========== DON'T WORRY ABOUT THIS, I AM WORKING ON IT! =============
   const handleSubmit = (e) => {
+    // console.log(startTime);
     e.preventDefault();
-    console.log("submit button");
-    const myNotification = window.createNotification({
-      // options here
-    });
+    
+    // createEventAPI({eventName: evenTitle, notes, location:selectedAddress, participants:eParticipants, eventStart:startTime});
+    createEventAPI({eventName: evenTitle, notes, location:selectedAddress, participants:eParticipants, eventStart:startTime, eventEnd:endTime});
+    // createEventAPI({eventStart:startTime });
+    
+
+    // const payload = {
+
+      
+
+    // }
+    // const myNotification = window.createNotification({
+    //   // options here
+    // });
     // let list = document.getElementById("toast");
     // list.classList.add("show");
     // list.innerHTML =
@@ -43,18 +57,43 @@ const CreateEvent = () => {
 
   const headTitle  = (window.location.href).substring((window.location.href).indexOf("=") + 1, (window.location.href).length);
   const hrefCancel = `/events~category=${(headTitle).substring(0, (headTitle).indexOf(":"))}`;
-
+  const [evenTitle, setEvenTitle] = useState('');
+  const [notes, setNotes] = useState('');
+  const [eParticipants, setEParticipants] = useState(null);
   const participants = [2, 3, 4, 5, 10, 20, 30]
+  const [startTime, setStartTime] = useState('');
+  const [endTime, setEndTime] = useState('');
 
   const[ selectedAddress, setSelectedAddress] =useState(null);
-  const sport = headTitle.substring(headTitle.indexOf(":") + 1, headTitle.length)
+  const sport = headTitle.substring(headTitle.indexOf(":") + 1, headTitle.length);
+  let someValue ='';
+  
+  // const event title
+  const handleEventChange = e => {
+    console.log('target is ', e.target);
+    console.log('event.target.value = ', e.target.value);
+    console.log('target the text field ', document.getElementById('txtEventTitle'));
+
+
+  }
+
+  const handleNotesChange = e => {
+    setNotes(e.target.value);
+  }
 
   // const FORMAT = 'MM/dd/yyyy';
   function disabledSeconds(h, m) {
     return [h + m % 60];
   }
+  
   function onChange(value) {
     console.log(value && value.format('HH:mm'));
+    setStartTime(value && value.format('HH:mm'))
+  }
+
+  function onChangeEnd(value) {
+    console.log(`end ${value && value.format('HH:mm')}`);
+    setEndTime(value && value.format('HH:mm'))
   }
 
   function handleAddressChange(address){
@@ -82,8 +121,11 @@ const CreateEvent = () => {
                   <input
                     type="text"
                     className="form-control"
-                    id="evenTtitle"
+                    id="txtEventTitle"
                     aria-describedby="emailHelp"
+                    onChange={e => setEvenTitle(e.target.value)}
+                    value={evenTitle}
+                    placeholder="House Party"
                     // placeholder="Make sure it's a good name"
                   />
                 </div>
@@ -91,9 +133,16 @@ const CreateEvent = () => {
 
               <div className="form-group">
                 <label htmlFor="exampleFormControlSelect1">Participants</label>
-                <select className="form-control" id="form-participants">
+                <select 
+                  className="form-control" 
+                  id="form-participants"
+                  onChange={e => setEParticipants(e.target.value)}
+                  >
+                  
                   {participants.map(pnumber => (
-                    <option value={pnumber}>
+                    // <option value={pnumber}
+                    <option value={pnumber}
+                    >
                       {pnumber}
                     </option>
                   ))}
@@ -123,6 +172,7 @@ const CreateEvent = () => {
                   showSecond={false}
                   minuteStep={5}
                   disabledSeconds={disabledSeconds}
+                  // onChange={e => setStartTime(e.target.value.format('HH:mm'))}
                   onChange={onChange}
                   use12Hours
                   inputReadOnly
@@ -136,7 +186,7 @@ const CreateEvent = () => {
                   showSecond={false}
                   minuteStep={5}
                   disabledSeconds={disabledSeconds}
-                  onChange={onChange}
+                  onChange={onChangeEnd}
                   use12Hours
                   inputReadOnly
                 />
@@ -163,11 +213,6 @@ const CreateEvent = () => {
                   ))}
                 </select>
               </div> */}
-
-              {/* <label htmlFor="exampleFormControlSelect1">Location</label>
-              <button id="map-btn" type="button" class="btn btn-info btn-lg createEvent-m-ml createEvent-d-block">
-                Go to map
-              </button> */}
               <div className="form-group">
                 <label htmlFor="exampleFormControlTextarea1">Additional notes</label>
                 <div id="i-have-a-tooltip" data-description="Your rules!">
@@ -175,6 +220,9 @@ const CreateEvent = () => {
                     id="exampleFormControlTextarea1"
                     className="form-control createEvent-textarea"
                     rows="10"
+                    onChange = {e => setNotes(e.target.value)}
+                    // onChange = {e => setEvenTitle(e.target.value)}
+                    value = {notes}
                   ></textarea>
                 </div>
               </div>
@@ -216,6 +264,7 @@ const CreateEvent = () => {
                 <div id="i-have-a-tooltip" data-description="Address">
                   <input
                     value ={selectedAddress}
+                    onChange ={e => setSelectedAddress(e.target.value)}
                     type="text"
                     className="form-control"
                     id="eventAddress"
