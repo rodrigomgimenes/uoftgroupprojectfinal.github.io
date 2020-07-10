@@ -7,7 +7,7 @@ const eventSchema = new Schema(
     sportType: {
         type: String,
         required: true,
-        unique: true
+        // unique: true
     },  
     eventName: {
       type: String,

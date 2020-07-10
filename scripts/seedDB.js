@@ -65,7 +65,7 @@ mongoose.connect(
       },
   ];
 
-  db.CreateEvent.collection.insertMany(eventSeed)
+  db.Event.collection.insertMany(eventSeed)
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

@@ -22,7 +22,6 @@ if (process.env.NODE_ENV === "production") {
 // Routes
 require("./routes/htmlRoutes")(app)
 require("./routes/apiRoutes")(app)
-app.use(require("./routes/api.js"))
 
 // Connect to the Mongo DB
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://alphateam:password123@ds029496.mlab.com:29496/heroku_mnws26x7", {

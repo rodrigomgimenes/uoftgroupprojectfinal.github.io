@@ -6,8 +6,7 @@ import "../../css/join_in_events.css";
 class JoinInEvent extends React.Component {
   constructor(props) {
     super(props);
-    this.headTitle  = (window.location.href).substring((window.location.href).indexOf("=") + 1, (window.location.href).length);
-    this.sport = this.headTitle.substring(this.headTitle.indexOf(":") + 1, this.headTitle.length);
+    this.sportType = this.props.match.params.sportType;
     this.state = {
       sportEvents: []
     }
@@ -15,7 +14,7 @@ class JoinInEvent extends React.Component {
 
   componentWillMount() {
     console.log("Component Will Mount");
-    axios.get("/api/events?sportType=" + this.props.match.params.categoryTitle)
+    axios.get("/api/events?sportType=" + this.sportType)
       .then(res => {
           console.log(res);
           this.setState({sportEvents: res.data});
@@ -30,10 +29,7 @@ class JoinInEvent extends React.Component {
       <div className="content-wrapper">
         <section className="content-header">
           <h1>
-            <strong>{this.headTitle.substring(0, this.headTitle.indexOf("@") - 1).toUpperCase()}:</strong> {this.sport}
-            <small><i>"<strong>to.gather</strong> makes it possible!"</i></small>
-            {/* {this.state ? this.state.sportEvents.length : ""} */}
-            {/* { this.state.sportEvents.length } */}
+            {this.sportType} <small><i>"<strong>to.gather</strong> makes it possible!"</i></small>
             <div>
             {this.state.sportEvents.map(sportEvent =>
               (

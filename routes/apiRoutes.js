@@ -1,6 +1,5 @@
 const Event = require("../models/event");
 
-
 module.exports = function(app) {
   app.post("/event", async function(req, res) {
       try {
@@ -14,5 +13,15 @@ module.exports = function(app) {
           res.status(500).send(error);
       }
   });
-};
 
+  app.get("/api/events", (req, res) => {
+    Event.find({sportType: req.query.sportType})
+    .sort({ date: -1 })
+    .then(dbTransaction => {
+      res.json(dbTransaction);
+    })
+    .catch(err => {
+      res.status(404).json(err);
+    });
+  });
+};
