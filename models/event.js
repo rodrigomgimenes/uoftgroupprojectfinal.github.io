@@ -6,29 +6,29 @@ const eventSchema = new Schema(
     {
     eventName: {
       type: String,
-    //   required: true,
-    //   unique: true
+      required: true,
+      unique: true
     },
     //participants number
     participants: {
         type: Number,
-        // required: true
+        required: true
     },
 
     //date from calendar
     eventDate: {
-        type: Date,
-        // required: true
+        type: String,
+        required: true
     },
 
     eventStart: {
         type: String,
-        // required: true
+        required: true
     },
 
     eventEnd: {
         type: String,
-        // required: true
+        required: true
     },
     
     notes: {
@@ -38,7 +38,7 @@ const eventSchema = new Schema(
     //this is the location from the 
     location: {
         type: String,
-        // required: true
+        required: true
     }
   });
   
