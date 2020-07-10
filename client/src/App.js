@@ -12,6 +12,7 @@ import Event from "./components/pages/eventroot/Event";
 import EventBranch from "./components/pages/eventbranch/EventBranch";
 import CreateEvent from "./components/pages/creat_event/CreateEvent";
 import ViewAll from "./components/pages/viewall/ViewAll";
+import JoinInEvent from "./components/pages/join_in_event/JoinInEvent";
 
 
 
@@ -29,6 +30,7 @@ class App extends Component {
           <Route exact path="/events" component={Event} />
           <Route path="/events~category=:id" component={EventBranch} />
           <Route exact path="/create-event=:id" component={CreateEvent} />
+          <Route exact path="/join-in-event=:categoryTitle" component={JoinInEvent} />
           <Route exact path="/viewall" component={ViewAll} />
           <Footer />
         </div>

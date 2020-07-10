@@ -4,6 +4,11 @@ const Schema = mongoose.Schema;
 
 const createEventSchema = new Schema(
     {
+    sportType: {
+        type: String,
+        required: true,
+        unique: true
+    },  
     eventName: {
       type: String,
       required: true,
