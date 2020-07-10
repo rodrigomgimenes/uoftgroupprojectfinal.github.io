@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 // mongoose.connect('mongodb://localhost/togather', {useNewUrlParser: true});
 const Schema = mongoose.Schema;
 
-const createEventSchema = new Schema(
+const eventSchema = new Schema(
     {
     sportType: {
         type: String,
@@ -22,29 +22,32 @@ const createEventSchema = new Schema(
 
     //date from calendar
     eventDate: {
-        type: Date,
-        // required: true
+        type: String,
+        required: true
     },
 
     eventStart: {
-        type: Number,
-        // required: true
+        type: String,
+        required: true
     },
 
     eventEnd: {
-        type: Number,
-        // required: true
+        type: String,
+        required: true
+    },
+    
+    notes: {
+        type: String
     },
 
     //this is the location from the 
     location: {
         type: String,
-        // required: true
+        required: true
     }
   });
   
 
-const CreateEvent = mongoose.model("CreateEvent", createEventSchema);
+const Event = mongoose.model("Event", eventSchema);
 
-module.exports = CreateEvent;
-  
+module.exports = Event;
