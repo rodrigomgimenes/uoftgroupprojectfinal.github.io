@@ -33,7 +33,7 @@ function Home () {
         {/* <div className="col-sm-12 col-md-6 col-lg-6"> */}
         <div className="col-lg-6">
           <div className="home-href-img">
-            <a href="/all-events">
+            <a href="/viewall">
               <div className="home-view-all">
                 <span className="home-back-text">VIEW ALL</span>
               </div>
