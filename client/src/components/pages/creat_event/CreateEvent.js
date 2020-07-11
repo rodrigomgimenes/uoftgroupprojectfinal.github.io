@@ -26,6 +26,7 @@ const CreateEvent = () => {
     
     createEventAPI (
       {
+        sportType:    sport,
         eventName:    eventTitle, 
         participants: eventParticipants, 
         eventDate:    eventDate,
