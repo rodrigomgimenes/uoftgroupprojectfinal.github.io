@@ -37,6 +37,7 @@ const CreateEvent = () => {
       notes: eventNotes,
       location: eventSelectedAddress,
     });
+
   };
 
   const headTitle = window.location.href.substring(
@@ -72,16 +73,13 @@ const CreateEvent = () => {
   const [eventEndTime, setEventEndTime] = useState("");
   const [eventNotes, setEventNotes] = useState("");
   const [eventSelectedAddress, setEventSelectedAddress] = useState(null);
+  const [eventDescription,     setEventDescription    ] = useState(null);
+
 
   const sport = headTitle.substring(
     headTitle.indexOf(":") + 1,
     headTitle.length
   );
-  
-
-
-
-
 
   // const FORMAT = 'MM/dd/yyyy';
   function disabledSeconds(h, m) {
@@ -92,15 +90,8 @@ const CreateEvent = () => {
     <div className="content-wrapper">
       <section className="content-header">
         <h1>
-          <strong>
-            {headTitle.substring(0, headTitle.indexOf("@") - 1).toUpperCase()}:
-          </strong>{" "}
-          {sport}
-          <small>
-            <i>
-              "<strong>to.gather</strong> makes it possible!"
-            </i>
-          </small>
+          <strong>{headTitle.substring(0, headTitle.indexOf("@") - 1).toUpperCase()}:</strong> {eventTypeDescription.replace(/%20/g, " ")}
+          <small><i>"<strong>to.gather</strong> makes it possible!"</i></small>
         </h1>
       </section>
 
@@ -219,16 +210,21 @@ const CreateEvent = () => {
                 </div>
               </div>
 
+              <div>
+                <p>{!eventDescription || eventDescription === "" ? "" : "Description: "}<i>{!eventDescription || eventDescription === "" ? "" : eventDescription}</i></p>
+              </div>
+              
+              
+              <div id="i-have-a-tooltip" data-description="Your rules!">
+
               <div id="i-have-a-tooltip" data-description="Your rules!">
                 <section className="map-content">
-                  <Maps
-                    onAddresschange={(address) =>
-                      setEventSelectedAddress(address)
-                    }
-                    type={sport}
-                  />
+
+                  <Maps onDescriptionchange={description => setEventDescription (description)} onAddresschange={address => setEventSelectedAddress(address)} type={eventTypeDescription} />
+
                 </section>
               </div>
+              
             </div>
           </div>
 

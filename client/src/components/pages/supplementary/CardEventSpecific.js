@@ -3,7 +3,7 @@ import "../../css/cardevent.css";
 
 function CardEventSpecific(props) {
   const hrefNewEvent = `/create-event=${props.headtitle}@10${props.eventid}:${props.category.title}`;
-  const hrefJoinEvent = `/join-in-event=${props.category.title}`;
+  const hrefJoinEvent = `/join-in-event=${props.headtitle}@10${props.eventid}:${props.category.title}`;
 
   return (
     <div className="event-full" id={props.category.title}>
