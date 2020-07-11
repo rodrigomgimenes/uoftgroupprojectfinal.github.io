@@ -87,3 +87,48 @@
   letter-spacing: 1px;
   margin-left: 10px;
 }
+
+.joinin-center {
+	margin: auto;
+  /* width: 65%; */
+  padding: 40px;
+}
+
+.joinin-img {
+	display: block;
+  margin-left: auto;
+	margin-right: auto;
+	height: 565px;
+	width: 565px;
+	opacity: 0.6;
+}
+
+.joinin-back-text {
+	font-size: 70px;
+	font-weight: 900;
+	text-align: center;
+	color: rgba(89, 89, 89, 0.6);
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	z-index: 9;
+}
+
+@media (max-width: 991px) {
+  .joinin-img {
+		height: 420px;
+		width: 420px;
+	}
+}
+@media (max-width: 767px) {
+	.joinin-center{
+		padding: 5px;
+	}
+	.joinin-img {
+		height: 285px;
+		width: 285px;
+	}
+	.joinin-back-text {
+		font-size: 40px;
+	}
+}

@@ -43,14 +43,14 @@ class JoinInEvent extends React.Component {
               <a href="/events"><span className="text-orange"> Events</span></a>
             </li>
             <li>
-              <a href={`/events~category=${(this.hrefTitle).substring(0, (this.hrefTitle).indexOf(":"))}`}><span className="text-orange"> Sports</span></a>
+              <a href={`/events~category=${(this.hrefTitle).substring(0, (this.hrefTitle).indexOf(":"))}`}><span className="text-orange"> {this.hrefTitle.substring(0, this.hrefTitle.indexOf("@"))}</span></a>
             </li>
             <li>Join in</li>
           </ol>
         </section>
         <section className="content">
           <div>
-            {this.state.sportEvents.map(sportEvent =>
+            {this.state.sportEvents.length > 0 ? this.state.sportEvents.map(sportEvent =>
               (
                 <div className="joinin-container">
                   <div className="joinin-main">
@@ -76,6 +76,11 @@ class JoinInEvent extends React.Component {
                   </div>
                 </div>
               ))
+              :
+              <div className="joinin-center">
+                <img className="joinin-img" src="./assets/icons/togather.png" alt="Logo" /> 
+                <h1 className="joinin-back-text">No events created</h1>
+              </div>
             }
           </div>
         </section>
