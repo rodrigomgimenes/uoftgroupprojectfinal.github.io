@@ -15,11 +15,9 @@ export default function Maps(props) {
     zoom: 8
   });
   const [selectedPark, setSelectedPark] = useState(null);
-  const {onAddresschange, type}=props
+  const {onAddresschange, type, onDescriptionchange}=props
 
-  console.log("type");
-  console.log(type);
-
+  
 
   useEffect(() => {
     const listener = e => {
@@ -55,7 +53,8 @@ export default function Maps(props) {
               onClick={e => {
                 e.preventDefault();
                 setSelectedPark(park);
-                onAddresschange(park.properties.PARKADDRESS)
+                onAddresschange(park.properties.PARKADDRESS);
+                onDescriptionchange(park.properties.DESCRIPTION)
               }}
             >
               

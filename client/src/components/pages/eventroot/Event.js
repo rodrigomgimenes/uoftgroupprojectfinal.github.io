@@ -1,5 +1,5 @@
 // import React from "react";
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import CardEvent from "../supplementary/CardEvent";
 import togatherList from "../supplementary/togather.json";
 // CSS
@@ -39,7 +39,7 @@ class Event extends Component {
                 headtitle={events.headtitle} 
                 badge={events.badge} 
                 caption={events.caption} 
-                example={events.example} 
+                example={events.example}
                 href={events.href}
               />
             ))
