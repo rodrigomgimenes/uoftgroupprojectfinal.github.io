@@ -89,7 +89,7 @@
       "properties": {
         "PARK_ID": 1234,
         "FACILITYID": 6,
-        "NAME": "Beach Blast - Volleyball Court Area",
+        "NAME": "BEACH BLAST - Volleyball Court Area",
         "PICTURE_DESCRIPTION": null,
         "PARKADDRESS": "15 Leswyn Rd, Toronto",
         "DESCRIPTION": "Flat surface, sand"
@@ -104,7 +104,7 @@
       "properties": {
         "PARK_ID": 2345,
         "FACILITYID": 7,
-        "NAME": "North Beach - Volleyball Court Area",
+        "NAME": "NORTH BEACH - Volleyball Court Area",
         "PICTURE_DESCRIPTION": null,
         "PARKADDRESS": "74 Railside Rd, Toronto",
         "DESCRIPTION": "Flat surface, sand"
@@ -119,7 +119,7 @@
       "properties": {
         "PARK_ID": 3456,
         "FACILITYID": 8,
-        "NAME": "Toronto Warriors Volleyball Club - Volleyball Court Area",
+        "NAME": "TORONTO WARRIORS VOLLEYBALL CLUB  - Volleyball Court Area",
         "PICTURE_DESCRIPTION": null,
         "PARKADDRESS": "2621 Midland Ave, Scarborough",
         "DESCRIPTION": "Flat surface, parquet"
@@ -134,7 +134,7 @@
       "properties": {
         "PARK_ID": 4567,
         "FACILITYID": 9,
-        "NAME": "Toronto Sport & Social Club - Volleyball Court Area",
+        "NAME": "TORONTO SPORTS & SOCIAL CLUB - Volleyball Court Area",
         "PICTURE_DESCRIPTION": null,
         "PARKADDRESS": "245 Eglinton Avenue E, Toronto",
         "DESCRIPTION": "Flat surface, parquet & sand"
@@ -149,7 +149,7 @@
       "properties": {
         "PARK_ID": 5678,
         "FACILITYID": 10,
-        "NAME": "The Hangar Sport & Events Centre - Volleyball Court Area",
+        "NAME": "THE HANGAR SPORT & EVENTS CENTRE  - Volleyball Court Area",
         "PICTURE_DESCRIPTION": null,
         "PARKADDRESS": "75 Carl Hall Rd  North York",
         "DESCRIPTION": "Flat surface, parquet & sand"
@@ -168,7 +168,7 @@
         "NAME": "CENTRAL TECH STADIUM - Soccer Court Area",
         "PICTURE_DESCRIPTION": null,
         "PARKADDRESS": "725 BATHURST ST, TORONTO M5S 2R5",
-        "DESCRIPTION": "OUTDOOR TURF WITH AN OPTION FOR AN INDOOR DOME DURING WINTER MONTHS"
+        "DESCRIPTION": "Outdoo turf with an option for an indoor dome during winter months"
       },
       "geometry": {
         "type": "Point",
@@ -183,7 +183,7 @@
         "NAME": "CHERRY BEACH SPORTS FIELD - Soccer Court Area",
         "PICTURE_DESCRIPTION": null,
         "PARKADDRESS": "275 UNWIN AVE, TORONTO, ON M5A 3K8",
-        "DESCRIPTION": "OUTDOOR TURF WITH AN OPTION FOR AN INDOOR DOME DURING WINTER MONTHS"
+        "DESCRIPTION": "Outdoo turf with an option for an indoor dome during winter months"
       },
       "geometry": {
         "type": "Point",
@@ -198,7 +198,7 @@
         "NAME": "TORONTO DOWNSVIEW HANGER - Soccer Court Area",
         "PICTURE_DESCRIPTION": null,
         "PARKADDRESS": "75 CARL HALL RD, NORTH YORK M3K 2B9",
-        "DESCRIPTION": "MULTIPLE OUTDOOR TURF FIELD, ONE GRASS FIELD AND MULTIPLE INDOOR TURF FIELDS WITH WASHROOM FACILITIES AND LOCKERS "
+        "DESCRIPTION": "Multiple outdoor turf feild , one grass field and multiple indoor turf fields with washroom facilities and lockers"
       },
       "geometry": {
         "type": "Point",
@@ -213,7 +213,7 @@
         "NAME": "REGENT PARK ATHLETIC - Soccer Court Area",
         "PICTURE_DESCRIPTION": null,
         "PARKADDRESS": "480 SHUTER ST, TORONTO, ON M5A 3K1",
-        "DESCRIPTION": "OUTDOOR GRASS FIELDS"
+        "DESCRIPTION": "Outdoor grass fields"
       },
       "geometry": {
         "type": "Point",
@@ -228,7 +228,7 @@
         "NAME": "MONARCH PARK STADIUM - Soccer Court Area",
         "PICTURE_DESCRIPTION": null,
         "PARKADDRESS": "1 PARKMOUNTH RD, TORONTO, ON M4J 0A5",
-        "DESCRIPTION": "OUTDOOR TURF WITH AN OPTION FOR AN INDOOR DOME DURING WINTER MONTHS"
+        "DESCRIPTION": "Outdoor turf also availbale during winter"
       },
       "geometry": {
         "type": "Point",
@@ -243,7 +243,7 @@
         "NAME": "TORONTO SOCCERPLEX - Soccer Court Area",
         "PICTURE_DESCRIPTION": null,
         "PARKADDRESS": "101 RAILSIDE RD, NORTH YORK, ON  M3A 1B2",
-        "DESCRIPTION": "OUTDOOR TURF WITH AN OPTION FOR AN INDOOR DOME DURING WINTER MONTHS"
+        "DESCRIPTION": "Outdoo turf with an option for an indoor dome during winter months"
       },
       "geometry": {
         "type": "Point",
@@ -288,7 +288,7 @@
         "NAME": "CHRISTIE PITS PARK - Basketball Court Area",
         "PICTURE_DESCRIPTION": null,
         "PARKADDRESS": "750 Bloor St W, Toronto, ON M6G 3K4",
-        "DESCRIPTION": "Christie Pits, is a public recreational area in Toronto, Ontario, Canada."
+        "DESCRIPTION": "A public recreational area in Toronto."
       },
       "geometry": {
         "type": "Point",
@@ -302,8 +302,8 @@
         "FACILITYID": 44,
         "NAME": "EDGEWOOD PS - Basketball Court Area",
         "PICTURE_DESCRIPTION": null,
-        "PARKADDRESS": "Toronto, ON M1P 3S4",
-        "DESCRIPTION": "GREAT COURTS WITHS NETS IN THE HEART OF TORONTO"
+        "PARKADDRESS": "230 Birkdale Rd, Scarborough, ON M1P 3S4",
+        "DESCRIPTION": "Great court with nets in the heart of Toronto"
       },
       "geometry": {
         "type": "Point",
@@ -318,7 +318,7 @@
         "NAME": "DUFFERIN GROVE PARK - Basketball Court Area",
         "PICTURE_DESCRIPTION": null,
         "PARKADDRESS": " 875 Dufferin St, Toronto, ON M6H 3K8",
-        "DESCRIPTION": "Dufferin Grove Park is a park in the Dufferin Grove neighbourhood of Toronto"
+        "DESCRIPTION": "Beautiful court in the Dufferin Grove neighbourhood of Toronto"
       },
       "geometry": {
         "type": "Point",
