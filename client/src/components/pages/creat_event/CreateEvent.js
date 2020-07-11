@@ -185,6 +185,24 @@ const CreateEvent = () => {
                 </section>
                 
               </div>
+
+              <div className="form-group " >
+                <label htmlFor="Description" id="Location-Description">
+                  Description
+                </label>
+                <div id="i-have-a-tooltip" data-description="Description">
+                  <input
+                    value = {eventSelectedAddress}
+                    onChange = {e => setEventSelectedAddress(e.target.value)}
+                    type="text"
+                    className="form-control"
+                    id="locationDescription"
+                    rows="4"
+                    aria-describedby="LocationDescription"
+                    disabled
+                  />
+                </div>
+              </div>
             </div>
 
           </div>
