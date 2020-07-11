@@ -22,7 +22,7 @@ const CreateEvent = () => {
     // console.log(startTime);
     e.preventDefault();
     
-    // createEventAPI({eventName: evenTitle, notes, location:selectedAddress, participants:eParticipants, eventStart:startTime});
+    // createEventAPI({eventName: evenTitle, notes, location:selectedAddress, participants:eParticipants});
     createEventAPI({eventName: evenTitle, notes, location:selectedAddress, participants:eParticipants, eventStart:startTime, eventEnd:endTime});
     // createEventAPI({eventStart:startTime });
     
@@ -85,7 +85,7 @@ const CreateEvent = () => {
   function disabledSeconds(h, m) {
     return [h + m % 60];
   }
-  
+
   function onChange(value) {
     console.log(value && value.format('HH:mm'));
     setStartTime(value && value.format('HH:mm'))
