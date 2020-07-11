@@ -74,7 +74,7 @@ const CreateEvent = () => {
   const [eventNotes, setEventNotes] = useState("");
   const [eventSelectedAddress, setEventSelectedAddress] = useState(null);
   const [eventDescription,     setEventDescription    ] = useState(null);
-
+  const [eventTypeDescription, setEventTypeDescription] = useState("");
 
   const sport = headTitle.substring(
     headTitle.indexOf(":") + 1,
@@ -245,9 +245,10 @@ const CreateEvent = () => {
               Cancel
             </a>
           </div>
+          </div>
         </form>
-      </div>
     </div>
+    </div>              
   );
 };
 export default CreateEvent;
