@@ -51,6 +51,7 @@ const CreateEvent = () => {
   const [eventEndTime,         setEventEndTime]         = useState('');
   const [eventNotes,           setEventNotes]           = useState('');
   const [eventSelectedAddress, setEventSelectedAddress] = useState(null);
+  const [eventDescription,     setEventDescription    ] = useState(null);
 
   const eventTypeDescription = headTitle.substring(headTitle.indexOf(":") + 1, headTitle.length);
 
@@ -181,19 +182,20 @@ const CreateEvent = () => {
               <div id="i-have-a-tooltip" data-description="Your rules!">
 
                 <section className="map-content">
-                  <Maps onAddresschange={address => setEventSelectedAddress(address)} type={eventTypeDescription} />
+                  <Maps onDescriptionchange={description => setEventDescription (description)} onAddresschange={address => setEventSelectedAddress(address)} type={eventTypeDescription} />
                 </section>
                 
               </div>
 
+             
               <div className="form-group " >
                 <label htmlFor="Description" id="Location-Description">
-                  Description
+                Location description
                 </label>
                 <div id="i-have-a-tooltip" data-description="Description">
                   <input
-                    value = {eventSelectedAddress}
-                    onChange = {e => setEventSelectedAddress(e.target.value)}
+                    value = {eventDescription}
+                    onChange = {e => setEventDescription(e.target.value)}
                     type="text"
                     className="form-control"
                     id="locationDescription"
@@ -203,6 +205,7 @@ const CreateEvent = () => {
                   />
                 </div>
               </div>
+              
             </div>
 
           </div>
