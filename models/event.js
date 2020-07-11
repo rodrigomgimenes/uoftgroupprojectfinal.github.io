@@ -4,11 +4,24 @@ const Schema = mongoose.Schema;
 
 const eventSchema = new Schema(
     {
-    sportType: {
+    //store user id
+    // eventCreater: {
+    //     type: String,
+    //     required: true,
+    // },
+
+    // Type of event "festival, sport"
+    eventType: {
         type: String,
-        required: true,
-        // unique: true
-    },  
+        required: true
+    },
+    
+    //subcategory e.g.Sport => Basketball, Soccer..
+    eventCategory: {
+        type: String,
+        required: true
+    },
+    
     eventName: {
       type: String,
       required: true,
@@ -40,7 +53,7 @@ const eventSchema = new Schema(
         type: String
     },
 
-    //this is the location from the 
+    //this is the location from the API
     location: {
         type: String,
         required: true
