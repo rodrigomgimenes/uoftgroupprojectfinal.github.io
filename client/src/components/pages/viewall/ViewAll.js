@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 // import React, { Component } from "react";
 import "../../css/viewall.css";
 // import {getEvents} from "../../../scripts/seedDB";
@@ -7,7 +7,8 @@ import "../../css/viewall.css";
 // CSS
 import "../../css/mainwindow.css";
 import "../../css/card.css";
-import ReactSearchBox from "react-search-box";
+// import ReactSearchBox from "react-search-box";
+import getEvents from "../../../API/getEvents";
 
 // const db = require("../../../models/create_event")
 // console.log(db);
@@ -24,8 +25,9 @@ import ReactSearchBox from "react-search-box";
 
 
 
-// const events = [];
-const events = [
+// const events = getEvents;
+// console.log(events);
+const event2 = [
     {
       "eventId": "1",
       "eventTitle": "Soccer",
@@ -86,12 +88,45 @@ const events = [
 //    }
 //   });
  
-class ViewAll extends React.Component {
-  state = {
-    savedEvents : events ?? [],
-  };
+
+
+    const ViewAll = () =>{
+// class ViewAll extends React.Component {
+  // state = {
+  //   savedEvents : event2 ?? [],
+  // };
   
-  render() {
+
+  const [selectedSport, setSelectedSport] = useState(1);
+    const [allEvents, setAllEvents] = useState([""]);
+    const [events, setEvents] = useState([""]);
+
+    const loadAllEvents = () => {
+      let fetchedEvents = getEvents();
+      if (!fetchedEvents || fetchedEvents.length < 1){
+        fetchedEvents = [""];
+      }
+      setAllEvents(fetchedEvents);
+    }
+
+    const loadEvents = () => {
+      let events = allEvents.filter(event => {
+        return event.sportType = selectedSport
+      })
+      setEvents(events);
+    }
+    
+    const onChangeSport = (event) => {
+      console.log(event);
+      setSelectedSport(event.target.value);
+      loadEvents();
+    }
+
+    loadAllEvents();
+    loadEvents();
+
+  // render() {
+    
     return (
       <div className="content-wrapper">
         <section className="content-header">
@@ -115,22 +150,21 @@ class ViewAll extends React.Component {
         <section className="content-header">
           <form>
             <div className="row">
-              <select className="title-container" value={this.state.games}>
-                <option value="0">Sort</option>
-                <option value="1">Soccer</option>
-                <option value="2">Volley</option>
-                <option value="3">Basketball</option>
-                <option value="4">Tennis</option>
+              <select className="title-container" onChange={onChangeSport} value={selectedSport}>
+                <option value="Soccer">Soccer</option>
+                <option value="Volley">Volley</option>
+                <option value="Basketball">Basketball</option>
+                <option value="Tennis">Tennis</option>
               </select>
               <div className="title-container"></div>
-              <div className="title-container">
+              {/* <div className="title-container">
                 <ReactSearchBox
                   placeholder="search"
                   value=""
                   data={this.data}
                   callback={(record) => console.log(record)}
                 />
-              </div>
+              </div> */}
             </div>
             <div className="homeT_wrapper">
               <div className="homeT_table">
@@ -141,31 +175,31 @@ class ViewAll extends React.Component {
                   <div className="homeT_cell">Participants</div>
                   <div className="homeT_cell">Start Time</div>
                   <div className="homeT_cell">End Time</div>
-                  <div className="homeT_cell">Status</div>
+                  <div className="homeT_cell">Event Notes</div>
                 </div>
 
-                {this.state.savedEvents.map((event) => (
-                  <div className="homeT_row" key={event.eventId}>
+                {events.map((event, index) => (
+                  <div className="homeT_row" key={index}>
                     <div className="homeT_cell" data-title="Event Name">
-                      {event.eventTitle}
+                      {event.eventName}
                     </div>
                     <div className="homeT_cell" data-title="Location">
-                      {event.eventLocation}
+                      {event.location}
                     </div>
                     <div className="homeT_cell" data-title="Event Date">
                       {event.eventDate}
                     </div>
                     <div className="homeT_cell" data-title="Participants">
-                      {event.eventParticipants}
+                      {event.participants}
                     </div>
                     <div className="homeT_cell" data-title="Start Time">
-                      {event.eventStartTime}
+                      {event.eventStart}
                     </div>
                     <div className="homeT_cell" data-title="End Time">
-                      {event.eventEndTime}
+                      {event.eventEnd}
                     </div>
-                    <div className="homeT_cell" data-title="Status">
-                      {event.eventStatus}
+                    <div className="homeT_cell" data-title="Event Notes">
+                      {event.notes}
                     </div>
                   </div>
                 ))}
@@ -175,7 +209,7 @@ class ViewAll extends React.Component {
         </section>
       </div>
     );
-  }
-}
+  };
+
 
 export default ViewAll;
