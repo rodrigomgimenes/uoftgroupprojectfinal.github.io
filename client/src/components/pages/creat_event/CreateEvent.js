@@ -178,6 +178,10 @@ const CreateEvent = () => {
                   />
                 </div>
               </div>
+              <div>
+                <p>{!eventDescription || eventDescription === "" ? "" : "Description: "}<i>{!eventDescription || eventDescription === "" ? "" : eventDescription}</i></p>
+              </div>
+              
               
               <div id="i-have-a-tooltip" data-description="Your rules!">
 
@@ -185,25 +189,6 @@ const CreateEvent = () => {
                   <Maps onDescriptionchange={description => setEventDescription (description)} onAddresschange={address => setEventSelectedAddress(address)} type={eventTypeDescription} />
                 </section>
                 
-              </div>
-
-             
-              <div className="form-group " >
-                <label htmlFor="Description" id="Location-Description">
-                Location description
-                </label>
-                <div id="i-have-a-tooltip" data-description="Description">
-                  <textarea
-                    value = {eventDescription}
-                    onChange = {e => setEventDescription(e.target.value)}
-                    type="text"
-                    className="form-control"
-                    id="locationDescription"
-                    rows="4"
-                    aria-describedby="LocationDescription"
-                    disabled
-                  />
-                </div>
               </div>
               
             </div>
