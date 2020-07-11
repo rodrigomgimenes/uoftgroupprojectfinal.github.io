@@ -193,7 +193,7 @@ const CreateEvent = () => {
                 Location description
                 </label>
                 <div id="i-have-a-tooltip" data-description="Description">
-                  <input
+                  <textarea
                     value = {eventDescription}
                     onChange = {e => setEventDescription(e.target.value)}
                     type="text"
