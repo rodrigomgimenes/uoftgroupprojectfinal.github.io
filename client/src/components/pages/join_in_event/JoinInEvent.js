@@ -26,6 +26,19 @@ class JoinInEvent extends React.Component {
           console.log(err);
       });
   }
+
+  joinInEvent(sportEvent) {
+      console.log("joinInEvent, sportEvent: " + sportEvent);
+      // axios.get("/api/events?sportType=" + this.typeEvent)
+      // .then(res => {
+      //     console.log(res);
+      //     this.setState({sportEvents: res.data});
+      // })
+      // .catch(err => {
+      //     console.log(err);
+      // });
+  }
+
   render() {
     console.log("Render");
     return (
@@ -71,7 +84,7 @@ class JoinInEvent extends React.Component {
                       <h6><span className="text-red">Event Location:</span>   {sportEvent.location}</h6>
                       <h6><span className="text-red">Event Start Time:</span>  {sportEvent.eventStart}</h6>
                       <h6><span className="text-red">Event End Time:</span>    {sportEvent.eventEnd}</h6>
-                      <button className="joinin-btn">Join In</button>
+                      <button className="joinin-btn" onClick={this.joinInEvent.bind(this, sportEvent)}>Join In</button>
                     </div>
                   </div>
                 </div>
