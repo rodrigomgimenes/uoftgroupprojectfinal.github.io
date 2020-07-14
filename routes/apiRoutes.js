@@ -15,9 +15,10 @@ module.exports = function(app) {
   });
 
   app.get("/api/events", (req, res) => {
-    Event.find({sportType: req.query.sportType})
-    .sort({ date: -1 })
+    Event.find({})
+    // .sort({ date: -1 })
     .then(dbTransaction => {
+      // console.log("getcall",dbTransaction);
       res.json(dbTransaction);
     })
     .catch(err => {
