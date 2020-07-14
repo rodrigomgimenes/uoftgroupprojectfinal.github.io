@@ -34,13 +34,14 @@ class Sidebar extends Component {
           </form> */}
           <ul className="sidebar-menu" data-widget="tree">
             <li className="header">MAIN</li>
-            <li className="treeview">
+            {/* <li className="treeview"> */}
+            <li>
               <a href="/events">
                 <i className="far fa-list-alt"></i>
                 <span className="m-l-sm">Events</span>
-                <span className="pull-right-container">
+                {/* <span className="pull-right-container">
                   <i className="fa fa-angle-left pull-right"></i>
-                </span>
+                </span> */}
               </a>
               <ul className="treeview-menu">
                 {/* ROUTE to every card event */}
