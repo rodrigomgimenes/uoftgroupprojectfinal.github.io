@@ -11,75 +11,42 @@ import "react-day-picker/lib/style.css";
 //API requests
 import createEventAPI from "../../../API/eventAPI";
 
+
 const CreateEvent = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    
 
-    // console.log(`eventName = ${eventTitle}`);
-    // console.log(`participants = ${eventParticipants}`);
-    // console.log(`eventDate = ${eventDate}`);
-    // console.log(`eventStart = ${eventStartTime}`);
-    // console.log(`eventEnd = ${eventEndTime}`);
-    // console.log(`notes = ${eventNotes}`);
-    // console.log(`location = ${eventSelectedAddress}`);
-
-    createEventAPI({
-      // eventCreater: evetentCreater,
-      eventType: eventType(),
-      eventCategory:eventCategory(),
-      eventName: eventTitle,
-      participants: eventParticipants,
-      eventDate: eventDate,
-      eventStart: eventStartTime,
-      eventEnd: eventEndTime,
-      notes: eventNotes,
-      location: eventSelectedAddress,
-    });
-
-  };
-
-  const headTitle = window.location.href.substring(
-    window.location.href.indexOf("=") + 1,
-    window.location.href.length
+    createEventAPI (
+      {
+        eventType:     eventType,
+        eventCategory: eventCategory,
+        eventName:     eventTitle, 
+        participants:  eventParticipants, 
+        eventDate:     eventDate,
+        eventStart:    eventStartTime,
+        eventEnd:      eventEndTime,
+        notes:         eventNotes,
+        location:      eventSelectedAddress
+      }
     );
-  const hrefCancel = `/events~category=${headTitle.substring(
-    0,
-    headTitle.indexOf(":")
-  )}`;
-  // console.log("What is this? ", hrefCancel);
-
-  const eventCategory = () => {
-    window.location.href.split(':');
-    const splitArr = window.location.href.split(':');
-    const eventT = splitArr[splitArr.length-1]
-    // console.log(eventT);
-    return eventT;
-  } ;
-
-  const eventType = () => {
-    const url = window.location.href;
-    const categoryType = url.substring(url.indexOf("=")+1,url.indexOf("@"))
-    return categoryType;
   };
+
+  const headTitle  = (window.location.href).substring((window.location.href).indexOf("=") + 1, (window.location.href).length);
+  const hrefCancel = `/events~category=${(headTitle).substring(0, (headTitle).indexOf(":"))}`;
 
   const participants = [2, 3, 4, 5, 10, 20, 30];
-  
-  const [eventTitle, setEventTitle] = useState("");
-  const [eventParticipants, setEventParticipants] = useState(participants[0]);
-  const [eventDate, setEventDate] = useState("");
-  const [eventStartTime, setEventStartTime] = useState("");
-  const [eventEndTime, setEventEndTime] = useState("");
-  const [eventNotes, setEventNotes] = useState("");
+
+  const [eventTitle,           setEventTitle]           = useState('');
+  const [eventParticipants,    setEventParticipants]    = useState(participants[0]);
+  const [eventDate,            setEventDate]            = useState('');
+  const [eventStartTime,       setEventStartTime]       = useState('');
+  const [eventEndTime,         setEventEndTime]         = useState('');
+  const [eventNotes,           setEventNotes]           = useState('');
   const [eventSelectedAddress, setEventSelectedAddress] = useState(null);
   const [eventDescription,     setEventDescription    ] = useState(null);
-  const [eventTypeDescription, setEventTypeDescription] = useState("");
 
-  const sport = headTitle.substring(
-    headTitle.indexOf(":") + 1,
-    headTitle.length
-  );
+  const eventType     = headTitle.substring(0, headTitle.indexOf("@"));
+  const eventCategory = headTitle.substring(headTitle.indexOf(":") + 1, headTitle.length);
 
   // const FORMAT = 'MM/dd/yyyy';
   function disabledSeconds(h, m) {
@@ -90,7 +57,7 @@ const CreateEvent = () => {
     <div className="content-wrapper">
       <section className="content-header">
         <h1>
-          <strong>{headTitle.substring(0, headTitle.indexOf("@") - 1).toUpperCase()}:</strong> {eventTypeDescription.replace(/%20/g, " ")}
+          <strong>{eventType.toUpperCase()}:</strong> {eventCategory.replace(/%20/g, " ")}
           <small><i>"<strong>to.gather</strong> makes it possible!"</i></small>
         </h1>
       </section>
@@ -110,7 +77,7 @@ const CreateEvent = () => {
                     className="form-control"
                     id="txtEventTitle"
                     aria-describedby="emailHelp"
-                    onChange={(e) => setEventTitle(e.target.value)}
+                    onChange={ (e) => setEventTitle(e.target.value) }
                     value={eventTitle}
                     placeholder="Event Title *"
                   />
@@ -133,13 +100,7 @@ const CreateEvent = () => {
               <div>
                 <label htmlFor="exampleFormControlSelect1">Event date: </label>
                 <DayPickerInput
-                  onDayChange={(day) =>
-                    setEventDate(
-                      day
-                        .toString()
-                        .substring(4, day.toString().indexOf(":") - 3)
-                    )
-                  }
+                  onDayChange={ (day) => setEventDate(day.toString().substring(4, day.toString().indexOf(":") - 3)) }
                 />
               </div>
 
@@ -150,9 +111,7 @@ const CreateEvent = () => {
                   showSecond={false}
                   minuteStep={5}
                   disabledSeconds={disabledSeconds}
-                  onChange={(value) =>
-                    setEventStartTime(value && value.format("HH:mm"))
-                  }
+                  onChange={ (value) => setEventStartTime(value && value.format("HH:mm")) }
                   use12Hours
                   inputReadOnly
                 />
@@ -165,42 +124,33 @@ const CreateEvent = () => {
                   showSecond={false}
                   minuteStep={5}
                   disabledSeconds={disabledSeconds}
-                  onChange={(value) =>
-                    setEventEndTime(value && value.format("HH:mm"))
-                  }
+                  onChange={ (value) => setEventEndTime(value && value.format("HH:mm")) }
                   use12Hours
                   inputReadOnly
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="exampleFormControlTextarea1">
-                  Additional notes
-                </label>
+                <label htmlFor="exampleFormControlTextarea1">Additional notes</label>
                 <div id="i-have-a-tooltip" data-description="Your rules!">
                   <textarea
                     id="exampleFormControlTextarea1"
                     className="form-control createEvent-textarea"
                     rows="10"
-                    onChange={(e) => setEventNotes(e.target.value)}
+                    onChange={ (e) => setEventNotes(e.target.value) }
                     value={eventNotes}
                   ></textarea>
                 </div>
               </div>
             </div>
 
-            <div
-              className="small-12 medium-3 large-3  column createEvent-right-row "
-              id="form-notes"
-            >
+            <div className="small-12 medium-3 large-3  column createEvent-right-row" id="form-notes">
               <div className="form-group">
-                <label htmlFor="event-title" id="form-event-title">
-                  Location
-                </label>
+                <label htmlFor="event-title" id="form-event-title">Location</label>
                 <div id="i-have-a-tooltip" data-description="Address">
                   <input
                     value={eventSelectedAddress}
-                    onChange={(e) => setEventSelectedAddress(e.target.value)}
+                    onChange={ (e) => setEventSelectedAddress(e.target.value) }
                     type="text"
                     className="form-control"
                     id="eventAddress"
@@ -213,18 +163,14 @@ const CreateEvent = () => {
               <div>
                 <p>{!eventDescription || eventDescription === "" ? "" : "Description: "}<i>{!eventDescription || eventDescription === "" ? "" : eventDescription}</i></p>
               </div>
-              
-              
-              <div id="i-have-a-tooltip" data-description="Your rules!">
 
               <div id="i-have-a-tooltip" data-description="Your rules!">
                 <section className="map-content">
 
-                  <Maps onDescriptionchange={description => setEventDescription (description)} onAddresschange={address => setEventSelectedAddress(address)} type={eventTypeDescription} />
+                  <Maps onDescriptionchange={description => setEventDescription (description)} onAddresschange={address => setEventSelectedAddress(address)} type={eventCategory} />
 
                 </section>
               </div>
-              
             </div>
           </div>
 
@@ -233,21 +179,15 @@ const CreateEvent = () => {
               id="create-event-btn"
               type="submit"
               className="btn btn-md btn-success createEvent-m-ml"
-              onClick=""
+              // onClick=""
             >
               Create event
             </button>
 
-            <a
-              href={hrefCancel}
-              className="btn-custom btn-danger btn-md createEvent-m-ml createEvent-d-inline"
-            >
-              Cancel
-            </a>
-          </div>
+            <a href={hrefCancel} className="btn-custom btn-danger btn-md createEvent-m-ml createEvent-d-inline">Cancel</a>
           </div>
         </form>
-    </div>
+      </div>
     </div>              
   );
 };

@@ -123,3 +123,8 @@
   margin-top: 10px;
   margin-left: 30px;
 }
+
+.createEvent-mapDescription {
+  margin-right: 30px;
+  width: 60%;
+}
