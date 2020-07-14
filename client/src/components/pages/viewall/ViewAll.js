@@ -27,7 +27,7 @@ const ViewAll = () => {
 
   const loadEvents = () => {
     let events = allEvents.filter((event) => {
-      return event.sportType == selectedSport;
+      return event.eventCategory == selectedSport;
     });
     setEvents(events);
   };
@@ -74,7 +74,7 @@ const ViewAll = () => {
               value={selectedSport}
             >
               <option value="Soccer">Soccer</option>
-              <option value="Volley">Volley</option>
+              <option value="Volleyball">Volleyball</option>
               <option value="Basketball">Basketball</option>
               <option value="Tennis">Tennis</option>
             </select>
