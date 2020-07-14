@@ -33,6 +33,8 @@ const eventSchema = new Schema(
         required: true
     },
 
+    signedUpUsers: [{ type: String }], 	//array of user emails that signed up for event
+
     //date from calendar
     eventDate: {
         type: String,

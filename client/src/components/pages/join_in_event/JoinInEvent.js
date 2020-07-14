@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import "../../css/join_in_events.css";
-
+import getEventsByType from "../../../API/getEventsByType";
+import addUserToEvent from "../../../API/addUserToEvent";
 
 class JoinInEvent extends React.Component {
   hrefTitle = (window.location.href).substring((window.location.href).indexOf("=") + 1, (window.location.href).length);
@@ -17,26 +17,27 @@ class JoinInEvent extends React.Component {
 
   componentWillMount() {
     console.log("Component Will Mount");
-    axios.get("/api/events?sportType=" + this.typeEvent)
-      .then(res => {
-          console.log(res);
-          this.setState({sportEvents: res.data});
-      })
-      .catch(err => {
-          console.log(err);
+      getEventsByType(this.typeEvent)
+      .then((data) => {
+        this.setState({sportEvents: data.data});
+      }).catch((error) => {
+          console.log("ERROR", error)
       });
   }
 
-  joinInEvent(sportEvent) {
-      console.log("joinInEvent, sportEvent: " + sportEvent);
-      // axios.get("/api/events?sportType=" + this.typeEvent)
-      // .then(res => {
-      //     console.log(res);
-      //     this.setState({sportEvents: res.data});
-      // })
-      // .catch(err => {
-      //     console.log(err);
-      // });
+  joinInEvent(e, sportEvent) {
+    // e.preventDefault();
+    console.log("joinInEvent, sportEvent: " + sportEvent);
+
+    //userEmil should be obtaines from currently signed user. using fake for now
+    let userEmail = "user1@abc.com";
+    addUserToEvent(sportEvent.eventName, userEmail)
+      .then((data) => {
+        console.log(data);
+        // this.setState({sportEvents: data.data});
+      }).catch((error) => {
+          console.log("ERROR", error)
+      });
   }
 
   render() {
@@ -84,7 +85,9 @@ class JoinInEvent extends React.Component {
                       <h6><span className="text-red">Event Location:</span>   {sportEvent.location}</h6>
                       <h6><span className="text-red">Event Start Time:</span>  {sportEvent.eventStart}</h6>
                       <h6><span className="text-red">Event End Time:</span>    {sportEvent.eventEnd}</h6>
-                      <button className="joinin-btn" onClick={this.joinInEvent.bind(this, sportEvent)}>Join In</button>
+                      {/* <button className="joinin-btn" onClick={this.joinInEvent.bind(this, sportEvent)}>Join In</button> */}
+                      <button className="joinin-btn" onClick={(e) => this.joinInEvent(e, sportEvent)}>Join In</button>
+                      
                     </div>
                   </div>
                 </div>

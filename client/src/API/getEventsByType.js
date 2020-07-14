@@ -1,11 +1,9 @@
 import axios from "axios";
 
-const getEvents = (data) => {
+const getEventsByType = (sportType) => {
   // console.log(data)
     return(
-        axios.get("/api/events", {
-            ...data
-          }).then((res) => {
+        axios.get("/eventsByType?sportType=" + sportType).then((res) => {
             // console.log(res);
             return res
           }).catch((error) => {
@@ -14,4 +12,4 @@ const getEvents = (data) => {
     );    
 }
 
-export default getEvents;
+export default getEventsByType;
