@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const getEventsByType = (sportType) => {
+const getEventsByType = (eventCategory) => {
   // console.log(data)
     return(
-        axios.get("/eventsByType?sportType=" + sportType).then((res) => {
+        axios.get("/eventsByType?eventCategory=" + eventCategory).then((res) => {
             // console.log(res);
             return res
           }).catch((error) => {
