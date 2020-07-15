@@ -1,8 +1,44 @@
-import React from "react";
+import React, {useState,useContext} from 'react';
+import AuthService from '../../../AuthService/AuthService';
+import Message from '../../Message';
+import {AuthContext} from '../../../Context/AuthContext';
 import "../../css/sign.css";
 
 
-function SignIn () {
+
+const SignIn = props => {
+  const [user,setUser] = useState({email: "", password : ""});
+  //not to render the message contect
+  const [message, setMessage] = useState(null);
+  const authContext = useContext(AuthContext);
+
+  const onChange = e => {
+      //username or password field
+      setUser({...user,[e.target.name] : e.target.value});
+      console.log(user);
+  }
+
+  const onSubmit = e => {
+      e.preventDefault();
+      AuthService.signin(user).then(data => {
+          console.log(data);
+          //this will pull out from our data
+          const {isAuthenticated, user, message} = data;
+          if(isAuthenticated){
+              authContext.setUser(user);
+              authContext.setIsAuthenticated(isAuthenticated);
+              //push will send us where we want to go
+              // props.setAuthenticated(true);
+              props.history.push('/home');
+          }
+          else
+              //message will pop if something is wrong
+              setMessage(message);
+      });
+  }
+
+// function SignIn () {
+
   return (
     <div className="sign_full-height sign_grid-container">
       <div className="sign_bckg-cover sign_grid-item sign_grid-sm-2 sign_grid-md-2"></div>
@@ -10,16 +46,37 @@ function SignIn () {
         <div className="sign_sign-in">
           <img className="sign_logo-avatar sign_logo" src="./assets/icons/logo.png" alt="logo" />
           <h1 className="sign_m-0 sign_typography-h">Sign in</h1>
-          <form className="sign_full-width sign_m-t-8" novalidate="">
+          <form className="sign_full-width sign_m-t-8" novalidate="" onSubmit={onSubmit}>
             <div className="sign_form-control sign_m-t-b sign_full-width">
               <div className="sign_input-base sign_outlined-input-base sign_full-width">
-                <input type="text" aria-invalid="false" autocomplete="email" autofocus="" id="email" name="email" placeholder="Email *" className="sign_input-base-input sign_outlined-input" />
+                
+                <input type="text" 
+                       aria-invalid="false" 
+                       autocomplete="email" 
+                       autofocus="" 
+                       id="email" 
+                       name="email"
+                       onChange={onChange}  
+                       placeholder="Email *" 
+                       className="sign_input-base-input sign_outlined-input" 
+                />
+              
                 <fieldset aria-hidden="true" className="sign_input-default sign_outlined-input-notched"></fieldset>
               </div>
             </div>
             <div className="sign_form-control sign_m-t-b sign_full-width">
               <div className="sign_input-base sign_outlined-input-base sign_full-width">
-                <input type="password" aria-invalid="false" autocomplete="current-password" id="password" name="password" placeholder="Password *" className="sign_input-base-input sign_outlined-input" />
+                
+                <input type="password" 
+                       aria-invalid="false" 
+                       autocomplete="current-password" 
+                       id="password" 
+                       name="password"
+                       onChange={onChange}  
+                       placeholder="Password *" 
+                       className="sign_input-base-input sign_outlined-input" 
+                />
+                
                 <fieldset aria-hidden="true" className="sign_input-default sign_outlined-input-notched"></fieldset>
               </div>
             </div>
@@ -39,6 +96,7 @@ function SignIn () {
               </p>
             </div>
           </form>
+          {message ? <Message message={message}/> : null}
         </div>
       </div>
     </div>

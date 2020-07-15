@@ -56,7 +56,7 @@ const ViewAll = () => {
         </h1>
         <ol className="breadcrumb">
           <li>
-            <a href="/">
+            <a href="/home">
               <i className="fas fa-door-open"></i>
               <span className="text-orange"> Main</span>
             </a>
