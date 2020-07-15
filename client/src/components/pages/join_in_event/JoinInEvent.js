@@ -5,7 +5,7 @@ import addUserToEvent from "../../../API/addUserToEvent";
 
 class JoinInEvent extends React.Component {
   hrefTitle = (window.location.href).substring((window.location.href).indexOf("=") + 1, (window.location.href).length);
-  typeEvent = this.hrefTitle.substring(this.hrefTitle.indexOf(":") + 1, this.hrefTitle.length);
+  eventCategory = this.hrefTitle.substring(this.hrefTitle.indexOf(":") + 1, this.hrefTitle.length);
 
   constructor(props) {
     super(props);
@@ -17,7 +17,7 @@ class JoinInEvent extends React.Component {
 
   componentWillMount() {
     console.log("Component Will Mount");
-      getEventsByType(this.typeEvent)
+      getEventsByType(this.eventCategory)
       .then((data) => {
         this.setState({sportEvents: data.data});
       }).catch((error) => {
@@ -46,7 +46,7 @@ class JoinInEvent extends React.Component {
       <div className="content-wrapper">
         <section className="content-header">
           <h1>
-            <strong>{this.hrefTitle.substring(0, this.hrefTitle.indexOf("@") - 1).toUpperCase()}:</strong> {(this.typeEvent).replace(/%20/g, " ")}
+            <strong>{this.hrefTitle.substring(0, this.hrefTitle.indexOf("@") - 1).toUpperCase()}:</strong> {(this.eventCategory).replace(/%20/g, " ")}
             <small><i>"Meet new people and join as many events as you want."</i></small>
           </h1>
           <ol className="breadcrumb">
@@ -69,7 +69,7 @@ class JoinInEvent extends React.Component {
                 <div className="joinin-container">
                   <div className="joinin-main">
                     <div className="joinin-preview">
-                      <h6>{this.typeEvent}</h6>
+                      <h6>{this.eventCategory}</h6>
                       <h2>{sportEvent.eventDate}</h2>
                     </div>
                     <div className="joinin-info">

@@ -27,7 +27,7 @@ module.exports = function(app) {
   });
 
   app.get("/eventsByType", (req, res) => {
-    Event.find({sportType: req.query.sportType})
+    Event.find({eventCategory: req.query.eventCategory})
     // .sort({ date: -1 })
     .then(dbTransaction => {
       // console.log("getcall",dbTransaction);
