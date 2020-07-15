@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Maps from "../supplementary/Maps";
 
 import "../../css/style_createEvent.css";
@@ -8,27 +8,72 @@ import "rc-time-picker/assets/index.css";
 import DayPickerInput from "react-day-picker/DayPickerInput";
 import "react-day-picker/lib/style.css";
 
+//Materialize UI
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Slide from '@material-ui/core/Slide';
+
 //API requests
 import createEventAPI from "../../../API/eventAPI";
 
 
-const CreateEvent = () => {
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
+
+const CreateEvent = props => {
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    createEventAPI (
-      {
-        eventType:     eventType,
-        eventCategory: eventCategory,
-        eventName:     eventTitle, 
-        participants:  eventParticipants, 
-        eventDate:     eventDate,
-        eventStart:    eventStartTime,
-        eventEnd:      eventEndTime,
-        notes:         eventNotes,
-        location:      eventSelectedAddress
-      }
-    );
+    if (createEventSuccess()) {
+      createEventAPI (
+        {
+          eventType:     eventType,
+          eventCategory: eventCategory,
+          eventName:     eventTitle, 
+          participants:  eventParticipants, 
+          eventDate:     eventDate,
+          eventStart:    eventStartTime,
+          eventEnd:      eventEndTime,
+          notes:         eventNotes,
+          location:      eventSelectedAddress
+        }
+      );
+      props.history.push('/viewall');
+    }
+    else {
+      handleClickOpen();
+    }
+  };
+
+  const createEventSuccess = () => {
+    if (!eventType            ||
+        !eventCategory        ||
+        !eventTitle           ||
+        !eventParticipants    ||
+        !eventDate            ||
+        !eventStartTime       ||
+        !eventEndTime         ||
+        !eventSelectedAddress
+       )
+      return false;
+    else
+      return true;
   };
 
   const headTitle  = (window.location.href).substring((window.location.href).indexOf("=") + 1, (window.location.href).length);
@@ -36,12 +81,12 @@ const CreateEvent = () => {
 
   const participants = [2, 3, 4, 5, 10, 20, 30];
 
-  const [eventTitle,           setEventTitle]           = useState('');
+  const [eventTitle,           setEventTitle]           = useState(null);
   const [eventParticipants,    setEventParticipants]    = useState(participants[0]);
-  const [eventDate,            setEventDate]            = useState('');
-  const [eventStartTime,       setEventStartTime]       = useState('');
-  const [eventEndTime,         setEventEndTime]         = useState('');
-  const [eventNotes,           setEventNotes]           = useState('');
+  const [eventDate,            setEventDate]            = useState(null);
+  const [eventStartTime,       setEventStartTime]       = useState(null);
+  const [eventEndTime,         setEventEndTime]         = useState(null);
+  const [eventNotes,           setEventNotes]           = useState(null);
   const [eventSelectedAddress, setEventSelectedAddress] = useState(null);
   const [eventDescription,     setEventDescription    ] = useState(null);
 
@@ -188,6 +233,29 @@ const CreateEvent = () => {
           </div>
         </form>
       </div>
+
+      <Dialog
+        open={open}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-slide-title"
+        aria-describedby="alert-dialog-slide-description"
+      >
+        <DialogTitle id="alert-dialog-slide-title">{"Oops!! Sorry, your event was not created successfully."}</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-slide-description">
+            It looks like you haven't completed the form before creating an event.
+            {"\n"}
+            Please, fill-up the form and be amazed by your new event.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Awesome
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>              
   );
 };

@@ -55,17 +55,6 @@ const SignUp = props => {
             <div className="sign_grid-item sign_grid-spacing-xs-2 sign_grid-sm-1">
               <div className="sign_form-control sign_full-width">
                 <div className="sign_input-base sign_outlined-input-base sign_full-width sign_MuiInputBase-formControl">
-                
-                {/* <input type="text" 
-                        name="username"
-                        value={user.username}
-                        onChange={onChange} 
-                        className="form-control" 
-                        placeholder="Enter username"
-                /> */}
-
-
-
                   <input type="text" 
                          value={user.firstname}
                          onChange={onChange} 
@@ -84,9 +73,6 @@ const SignUp = props => {
             <div className="sign_grid-item sign_grid-spacing-xs-2 sign_grid-sm-1">
               <div className="sign_form-control sign_full-width">
                 <div className="sign_input-base sign_outlined-input-base sign_full-width sign_MuiInputBase-formControl">
-                  {/* <input type="text" aria-invalid="false" autocomplete="lname" id="lastName" name="lastName" placeholder="Last Name *" className="sign_input-base-input sign_outlined-input" /> */}
-
-
                   <input type="text" 
                          value={user.lastname}
                          onChange={onChange} 
@@ -104,8 +90,6 @@ const SignUp = props => {
             <div className="sign_grid-item sign_grid-spacing-xs-2">
               <div className="sign_form-control sign_full-width">
                 <div className="sign_input-base sign_outlined-input-base sign_full-width sign_MuiInputBase-formControl">
-                  {/* <input type="text" aria-invalid="false" autocomplete="email" id="email" name="email" placeholder="Email Address *" className="sign_input-base-input sign_outlined-input" /> */}
-                  
                   <input type="text" 
                          value={user.email}
                          onChange={onChange} 
@@ -123,9 +107,7 @@ const SignUp = props => {
             <div className="sign_grid-item sign_grid-spacing-xs-2">
               <div className="sign_form-control sign_full-width">
                 <div className="sign_input-base sign_outlined-input-base sign_full-width sign_MuiInputBase-formControl">
-                  {/* <input type="password" aria-invalid="false" autocomplete="current-password" id="password" name="password" placeholder="Password *" className="sign_input-base-input sign_outlined-input" /> */}
-                  
-                  <input type="text" 
+                  <input type="password" 
                          value={user.password}
                          onChange={onChange} 
                          aria-invalid="false" 
