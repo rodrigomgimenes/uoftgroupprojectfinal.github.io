@@ -21,13 +21,18 @@ const ViewAll = () => {
         data = [""];
       }
       setAllEvents(data);
-      setSelectedSport("Soccer");
+      setSelectedSport("All");
     });
   };
 
   const loadEvents = () => {
+    if(selectedSport === "All"){
+      setEvents(allEvents);
+      return;
+    }
+
     let events = allEvents.filter((event) => {
-      return event.eventCategory == selectedSport;
+      return event.eventCategory === selectedSport;
     });
     setEvents(events);
   };
@@ -73,6 +78,7 @@ const ViewAll = () => {
               onChange={onChangeSport}
               value={selectedSport}
             >
+              <option value="All">All</option>
               <option value="Soccer">Soccer</option>
               <option value="Volleyball">Volleyball</option>
               <option value="Basketball">Basketball</option>
