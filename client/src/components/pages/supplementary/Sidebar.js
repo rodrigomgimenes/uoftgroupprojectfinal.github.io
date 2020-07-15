@@ -71,6 +71,7 @@ class Sidebar extends Component {
           </ul>
         </section>
       </aside>
+
     );
   }
 }

@@ -15,16 +15,16 @@ export default ({ children }) => {
 
 
 
-    // useEffect(() => {
-    //     // console.log("hello");
-    //     AuthService.isAuthenticated()
-    //     .then(data => {
-    //         console.log(data);
-    //         setUser(data.user);
-    //         setIsAuthenticated(data.isAuthenticated);
-    //         // setIsLoaded(false);
-    //     });
-    // },[]);
+    useEffect(() => {
+        // console.log("hello");
+        AuthService.isAuthenticated()
+        .then(data => {
+            console.log(data);
+            setUser(data.user);
+            setIsAuthenticated(data.isAuthenticated);
+            // setIsLoaded(false);
+        });
+    },[]);
 
 
 

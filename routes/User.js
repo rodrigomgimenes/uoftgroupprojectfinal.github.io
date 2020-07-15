@@ -32,7 +32,7 @@ userRouter.post('/signup', (req,res) => {
     });
 });
 
-userRouter.post('/signin', (req, res, next) => {
+userRouter.post('/', (req, res, next) => {
     return passport.authenticate(
      'local',
      { session: false },
@@ -50,7 +50,7 @@ userRouter.post('/signin', (req, res, next) => {
   });
 
 
-userRouter.post('/', passport.authenticate('local',{session : false}), (req,res) => {
+userRouter.post('/signin', passport.authenticate('local',{session : false}), (req,res) => {
     if (req.isAuthenticated()){
         const {_id,email} = req.user;
         const token = signToken(_id);
