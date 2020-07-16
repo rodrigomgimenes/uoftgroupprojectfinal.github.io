@@ -9,6 +9,8 @@ class Sidebar extends Component {
     togatherList
   };
 
+ 
+
   render() {
     return (
       <aside className="main-sidebar">

@@ -41,12 +41,14 @@ const CreateEvent = props => {
     e.preventDefault();
 
     const token = JSON.parse(localStorage.getItem('token'));
-    alert(token.uid);
-    alert(token.ue);
+    const userId = token.uid;
+    // const userName = token.ue;
 
     if (createEventSuccess()) {
       createEventAPI (
         {
+          signedUpUsers: userId,
+          eventCreaterID:userId,
           eventType:     eventType,
           eventCategory: eventCategory,
           eventName:     eventTitle, 
