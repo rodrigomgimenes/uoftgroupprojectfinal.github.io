@@ -59,7 +59,7 @@ class JoinInEvent extends React.Component {
       <div className="content-wrapper">
         <section className="content-header">
           <h1>
-            <strong>{this.hrefTitle.substring(0, this.hrefTitle.indexOf("@") - 1).toUpperCase()}:</strong> {(this.eventCategory).replace(/%20/g, " ")}
+            <strong>{this.hrefTitle.substring(0, this.hrefTitle.indexOf("@")).toUpperCase()}:</strong> {(this.eventCategory).replace(/%20/g, " ")}
             <small><i>"Meet new people and join as many events as you want."</i></small>
           </h1>
           <ol className="breadcrumb">

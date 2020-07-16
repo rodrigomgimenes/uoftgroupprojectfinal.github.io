@@ -89,6 +89,8 @@ const ViewAll = () => {
           <div className="homeT_wrapper">
             <div className="homeT_table">
               <div className="homeT_row homeT_header homeT_green">
+                <div className="homeT_cell">Event Type</div>
+                <div className="homeT_cell">Category</div>
                 <div className="homeT_cell">Title</div>
                 <div className="homeT_cell">Location</div>
                 <div className="homeT_cell">Event Date</div>
@@ -96,10 +98,17 @@ const ViewAll = () => {
                 <div className="homeT_cell">Start Time</div>
                 <div className="homeT_cell">End Time</div>
                 <div className="homeT_cell">Event Notes</div>
+                <div className="homeT_cell">Status</div>
               </div>
 
               {events.map((event, index) => (
                 <div className="homeT_row" key={index}>
+                  <div className="homeT_cell" data-title="Event Type">
+                    <strong>{event.eventType}</strong> 
+                  </div>
+                  <div className="homeT_cell" data-title="Event Category">
+                    {event.eventCategory}
+                  </div>
                   <div className="homeT_cell" data-title="Event Name">
                     {event.eventName}
                   </div>
@@ -110,7 +119,7 @@ const ViewAll = () => {
                     {event.eventDate}
                   </div>
                   <div className="homeT_cell" data-title="Participants">
-                    {event.participants}
+                    {parseInt(event.participants) - parseInt(!event.signedUpUsers ? "0" : event.signedUpUsers.length)}
                   </div>
                   <div className="homeT_cell" data-title="Start Time">
                     {event.eventStart}
@@ -120,6 +129,9 @@ const ViewAll = () => {
                   </div>
                   <div className="homeT_cell" data-title="Event Notes">
                     {event.notes}
+                  </div>
+                  <div className="homeT_cell" data-title="Event Status">
+                    <button className="va-joinin-btn">Join In</button>
                   </div>
                 </div>
               ))}

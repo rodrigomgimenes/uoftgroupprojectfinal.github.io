@@ -10,3 +10,15 @@
    .right{
        float: right;
    }
+
+.va-joinin-btn {
+  background-color: #F49C12;
+  border: 0;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 14px;
+  padding: 4px 16px;
+  position: static;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
