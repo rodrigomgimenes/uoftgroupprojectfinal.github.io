@@ -56,7 +56,7 @@ userRouter.post('/signin', passport.authenticate('local',{session : false}), (re
         const token = signToken(_id);
         //important that the token wont be stolen
         res.cookie('access_token', token, {httpOnly: true, sameSite: true});
-        res.status(200).json({isAuthenticated : true, user : {email}});
+        res.status(200).json({isAuthenticated : true, user : {email}, token: {_id}});
     }  
 });
 
