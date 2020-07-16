@@ -4,11 +4,16 @@ const Schema = mongoose.Schema;
 
 const eventSchema = new Schema(
     {
+
+    signedUpUsers: {
+        type: String,
+        required: true,
+    },
     //store user id
-    // eventCreater: {
-    //     type: String,
-    //     required: true,
-    // },
+    eventCreaterID: {
+        type: String,
+        required: true,
+    },
 
     // Type of event "festival, sport"
     eventType: {
