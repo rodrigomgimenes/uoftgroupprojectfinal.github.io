@@ -32,6 +32,21 @@ class App extends Component {
           <Route exact path="/viewall" component={ViewAll} />
           <Footer />
         </div>
+<<<<<<< Updated upstream
+=======
+        )
+        } */}
+
+        <Route exact path="/" component={SignIn} />
+        <Route exact path="/signup" component={SignUp} />
+
+        <Route  path="/home" component={MainApp} />
+        <Route  path="/events" component={MainApp} />
+        <Route  path="/events~category=:id" component={MainApp} />
+        <Route  path="/create-event=:id" component={MainApp} />
+        <Route  path="/join-in-event=:id" component={MainApp} />
+        <Route  path="/viewall" component={MainApp} />
+>>>>>>> Stashed changes
       </Router>
     );
   }

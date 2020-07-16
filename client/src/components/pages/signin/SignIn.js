@@ -2,7 +2,43 @@ import React from "react";
 import "../../css/sign.css";
 
 
+<<<<<<< Updated upstream
 function SignIn () {
+=======
+const SignIn = props => {
+  const [user,setUser] = useState({email: "", password : ""});
+  //not to render the message contect
+  const [message, setMessage] = useState(null);
+  const authContext = useContext(AuthContext);
+
+  const onChange = e => {
+      //username or password field
+      setUser({...user,[e.target.name] : e.target.value});
+      console.log(user);
+  }
+
+  const onSubmit = e => {
+      e.preventDefault();
+      AuthService.signin(user).then(data => {
+          console.log(data);
+          //this will pull out from our data
+          const {isAuthenticated, user, message} = data;
+          if(isAuthenticated){
+              authContext.setUser(user);
+              authContext.setIsAuthenticated(isAuthenticated);
+              //push will send us where we want to go
+              // props.setAuthenticated(true);
+              props.history.push('/home');
+          }
+          else
+              //message will pop if something is wrong
+              setMessage(message);
+      });
+  }
+
+// function SignIn () {
+
+>>>>>>> Stashed changes
   return (
     <div className="sign_full-height sign_grid-container">
       <div className="sign_bckg-cover sign_grid-item sign_grid-sm-2 sign_grid-md-2"></div>
