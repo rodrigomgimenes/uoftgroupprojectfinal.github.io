@@ -27,6 +27,8 @@ const SignIn = props => {
           if(isAuthenticated){
               authContext.setUser(user);
               authContext.setIsAuthenticated(isAuthenticated);
+              
+              localStorage.setItem('userEmail', user.email);
               //push will send us where we want to go
               // props.setAuthenticated(true);
               props.history.push('/home');

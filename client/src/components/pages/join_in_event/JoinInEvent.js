@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "../../css/join_in_events.css";
 import getEventsByType from "../../../API/getEventsByType";
 import addUserToEvent from "../../../API/addUserToEvent";
@@ -6,7 +6,7 @@ import addUserToEvent from "../../../API/addUserToEvent";
 class JoinInEvent extends React.Component {
   hrefTitle = (window.location.href).substring((window.location.href).indexOf("=") + 1, (window.location.href).length);
   eventCategory = this.hrefTitle.substring(this.hrefTitle.indexOf(":") + 1, this.hrefTitle.length);
-
+  
   constructor(props) {
     super(props);
     // this.sportType = this.props.match.params.sportType;
@@ -30,11 +30,24 @@ class JoinInEvent extends React.Component {
     console.log("joinInEvent, sportEvent: " + sportEvent);
 
     //userEmil should be obtaines from currently signed user. using fake for now
-    let userEmail = "user1@abc.com";
+    // let userEmail = "user1@abc.com";
+    let userEmail = localStorage.getItem('userEmail');
     addUserToEvent(sportEvent.eventName, userEmail)
       .then((data) => {
         console.log(data);
+
+        //update signedUpUsers based on returned object
+        for(var i = 0 ; i < this.state.sportEvents.length ; i++) {
+          if(this.state.sportEvents[i].eventName === data.data.eventName) {
+            this.state.sportEvents[i].signedUpUsers = data.data.signedUpUsers;
+            break;
+          }
+        }
         // this.setState({sportEvents: data.data});
+        // Force a render with a simulated state change
+        this.setState({ state: this.state });
+        // Force a render without state change...
+        //this.forceUpdate();
       }).catch((error) => {
           console.log("ERROR", error)
       });
@@ -76,8 +89,8 @@ class JoinInEvent extends React.Component {
                       <div className="joinin-progress-container">
                         <div className="joinin-progress"></div>
                         <span className="joinin-progress-text">
-                          {/* For now I'm just subtracting 1 but we need to check how many people we have in the field JoinIn of our database */}
-                          {parseInt(sportEvent.participants) - 1} / {sportEvent.participants} Participants
+                          {/* TODO: progress bar needs to be updated to reflect (sportEvent.signedUpUsers.length / sportEvent.participants) * 100 % */}
+                          {sportEvent.signedUpUsers.length} / {sportEvent.participants} Participants
                         </span>
                       </div>
                       
@@ -91,7 +104,7 @@ class JoinInEvent extends React.Component {
                     </div>
                   </div>
                 </div>
-              ))
+               ))
               :
               <div className="joinin-center">
                 <img className="joinin-img" src="./assets/icons/togather.png" alt="Logo" /> 
