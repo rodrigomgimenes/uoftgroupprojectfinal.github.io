@@ -40,8 +40,10 @@ const CreateEvent = props => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    alert(localStorage.getItem("token"));
-    
+    const token = JSON.parse(localStorage.getItem('token'));
+    alert(token.uid);
+    alert(token.ue);
+
     if (createEventSuccess()) {
       createEventAPI (
         {
