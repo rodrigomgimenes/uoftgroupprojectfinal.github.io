@@ -40,6 +40,8 @@ const CreateEvent = props => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    alert(localStorage.getItem("token"));
+    
     if (createEventSuccess()) {
       createEventAPI (
         {
