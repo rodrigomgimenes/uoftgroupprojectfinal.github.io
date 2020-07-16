@@ -6,10 +6,16 @@ import "../../css/togather.css";
 
 class Sidebar extends Component {
   state = {
-    togatherList
+    togatherList,
+    name : "Anonymous"
   };
 
- 
+  componentWillMount() {
+    let name = localStorage.getItem('userEmail')
+    console.log(name)
+    if (!name){name="Anonymous"} 
+    this.setState({name : name})
+  }
 
   render() {
     return (
@@ -20,7 +26,7 @@ class Sidebar extends Component {
               <img src="./assets/icons/anonymous.png" className="img-circle" alt="User" />
             </div>
             <div className="pull-left info">
-              <span>Anonymous</span>
+              <span>{this.state.name}</span>
               <p><i className="fas fa-check-double text-lime"></i> Online</p>
             </div>
           </div>
