@@ -2,9 +2,9 @@ import React from "react";
 import "../../css/sign.css";
 
 
-<<<<<<< Updated upstream
+
 function SignIn () {
-=======
+
 const SignIn = props => {
   const [user,setUser] = useState({email: "", password : ""});
   //not to render the message contect
@@ -38,7 +38,7 @@ const SignIn = props => {
 
 // function SignIn () {
 
->>>>>>> Stashed changes
+
   return (
     <div className="sign_full-height sign_grid-container">
       <div className="sign_bckg-cover sign_grid-item sign_grid-sm-2 sign_grid-md-2"></div>
